@@ -74,4 +74,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+    // drawing zoom
+    const drawingButtons = document.querySelectorAll('.drawing');
+
+    drawingButtons?.forEach(button => {
+        button.addEventListener('click', function () {
+            const imgElement = this.querySelector('img');
+            const imgSrc = imgElement.getAttribute('src');
+            const modalImg = document.getElementById('zoomedImage');
+            modalImg.setAttribute('src', imgSrc);
+        });
+    });
+
+
 });

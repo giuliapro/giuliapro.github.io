@@ -1503,3 +1503,30 @@ span.flag img {
 }
 
 /* #endregion */
+
+
+/* #region Modal */
+
+.modal.modal__custom .modal-body {
+    padding: 0;
+
+}
+
+.modal.modal__custom .modal-content {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.modal.modal__custom .btn-close {
+    position: absolute;
+    right: clamp(0.5rem, 5vw, 1rem);
+    top: clamp(0.5rem, 5vw, 1rem);
+    background-color: var(--beige-200);
+    padding: 0.5rem;
+    z-index: 3;
+    opacity: 0.9;
+
+}
+
+/* #endregion */
