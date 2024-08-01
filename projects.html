@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#969944">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- boostrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- my css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Projects</title>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <nav class="navbar">
+            <a href="about.html" class="logo"></a>
+            <div class="wrap__navigation">
+                <ul class="wrap__nav-items">
+                    <li class="nav__item">
+                        <a href="about.html" class="about">
+                            <img class="icon__nav-item" src="./assets/img/about.png" alt="about icon">
+                            About me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="projects active">
+                            <img class="icon__nav-item" src="./assets/img/projects.png" alt="projects icon">
+                            Projects
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="drawings.html" class="drawings">
+                            <img class="icon__nav-item" src="./assets/img/drawings.png" alt="drawings icon">
+                            Drawings
+                        </a>
+                    </li>
+                </ul>
+                <ul class="wrap__contacts">
+                    <li class="contact__link">
+                        <a href="#">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </li>
+                    <li class="contact__link">
+                        <a href="#">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="contact__link">
+                        <a href="#">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="toggle__navbar d-lg-none">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </nav>
+        <main class="wrap__body padding_page">
+            <section class="main__section scroll">
+                <section class="wrap__section fade-in">
+                    <div class="wrap__section-header">
+                        <div class="wrap__icon-header">
+                            <img src="./assets/img/icon-projects.png" alt="icon">
+                        </div>
+                        <h2>All Projects</h2>
+                    </div>
+                    <p>Here you can find all my projects. I've made them over past years, while I was learning different
+                        technique and skills. My
+                        core area is <b>Web Design</b>, but here you can find also different projects, like
+                        illustrations, design, code and
+                        so on.</p>
+                    <b>I like to explore and learn multidisciplinary skills to improve my work. So, enjoy!</b>
+                    <div class="wrap__toolbar">
+                        <button class="project__field active" data-target="all">All</button>
+                        <button class="project__field" data-target="web-design">Web Design</button>
+                        <button class="project__field" data-target="ux-design">UX Design</button>
+                        <button class="project__field" data-target="ui-design">UI Design</button>
+                        <button class="project__field" data-target="front-end">Front-end</button>
+                        <button class="project__field" data-target="back-end">Back-end</button>
+                        <button class="project__field" data-target="blog">Blog</button>
+                        <button class="project__field" data-target="social-media">Social Media</button>
+                    </div>
+                    <div class="wrap__projects" data-layout="projects">
+                        <div class="single__project" data-target="web-design">
+                            <a href="emmebi.html">
+                                <img src="./assets/img/card-emmebi.png" alt="project preview">
+                            </a>
+
+                            <h3>Emmebi Spa</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#html">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#css">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#js">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#bootstrap">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#devexpress">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#ai">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#ps">
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="web-design">
+                            <a href="motoexport.html">
+                                <img src="./assets/img/card-motoexport.png" alt="project preview">
+                            </a>
+
+                            <h3>Moto Export</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#html">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#css">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#js">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#bootstrap">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#devexpress">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="ux-design ui-design">
+                            <a href="ecobites.html">
+                                <img src="./assets/img/card-ecobites.png" alt="project preview">
+                            </a>
+
+                            <h3>EcoBites</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">UX Design</label>
+                                <label for="single__project" class="project__field">UI Design</label>
+                            </div>
+                            <div class="wrap">
+
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#sketch">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="single__project" data-target="front-end back-end">
+                            <a href="swapify.html">
+                                <img src="./assets/img/card-swapify.png" alt="project preview">
+                            </a>
+
+                            <h3>Swapify</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Front-end</label>
+                                <label for="single__project" class="project__field">Back-end</label>
+                                <label for="single__project" class="project__field">UX Design</label>
+                                <label for="single__project" class="project__field">UI Design</label>
+                            </div>
+                            <div class="wrap">
+
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#react">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#node">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#mongo">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#bootstrap">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="web-design">
+                            <a href="rfn.html">
+                                <img src="./assets/img/card-rfn.png" alt="project preview">
+                            </a>
+
+                            <h3>Rooting For Nature</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#html">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#css">
+                                </svg>
+
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#bootstrap">
+                                </svg>
+
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="ux-design ui-design">
+                            <a href="infocus.html">
+                                <img src="./assets/img/card-infocus.png" alt="project preview">
+                            </a>
+
+                            <h3>InFocus</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">UX Design</label>
+                                <label for="single__project" class="project__field">UI Design</label>
+                            </div>
+                            <div class="wrap">
+
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#sketch">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="blog social-media">
+                            <a href="ambientami.html">
+                                <img src="./assets/img/card-ambientami.png" alt="project preview">
+                            </a>
+
+                            <h3>AmbientaMi</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Blog</label>
+                                <label for="single__project" class="project__field">Social Media</label>
+                            </div>
+                            <div class="wrap">
+
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#instagram">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#wordpress">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="web-design">
+                            <a href="webble.html">
+                                <img src="./assets/img/card-webble.png" alt="project preview">
+                            </a>
+
+                            <h3>Webble</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#html">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#css">
+                                </svg>
+
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#bootstrap">
+                                </svg>
+
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#ai">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#ps">
+                                </svg>
+
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="web-design">
+                            <a href="rupikaur.html">
+                                <img src="./assets/img/card-rupi.png" alt="project preview">
+                            </a>
+
+                            <h3>Rupi Kaur</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#html">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#css">
+                                </svg>
+
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#bootstrap">
+                                </svg>
+
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+
+
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="web-design">
+                            <a href="hovnas.html">
+                                <img src="./assets/img/card-hovnas.png" alt="project preview">
+                            </a>
+
+                            <h3>Hovnas</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#html">
+                                </svg>
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#css">
+                                </svg>
+
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#ai">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#ps">
+                                </svg>
+
+                            </div>
+
+                        </div>
+                        <div class="single__project" data-target="blog">
+                            <a href="thefaculty.html">
+                                <img src="./assets/img/card-thefaculty.png" alt="project preview">
+                            </a>
+
+                            <h3>blog notes thefaculty</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Blog</label>
+
+                            </div>
+                            <div class="wrap">
+                                <svg class="icon-dark fill icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#wordpress">
+                                </svg>
+                                <svg class="icon-dark stroke icon-s icon-nav">
+                                    <use href="./assets/img/icons.svg#figma">
+                                </svg>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+            </section>
+        </main>
+        <footer class="wrap__footer">
+            <div class="wrap__credits">
+                <img src="./assets/img/logo_hover.png" alt="logo">
+                <div class="wrap__text">
+                    <p>Website realized by Giulia Orsa</p>
+                    <p class="small">Icons Credits: manaloka.com</p>
+                </div>
+            </div>
+            <div class="wrap__experience">
+                <div class="wrap__credits text-center">
+                    <p class="small">Thanks you for visiting my portfolio, I hope you liked it!
+                        For comments or any advice write me an email to giulia.orsa@gmail.com</p>
+                </div>
+                <div class="wrap__credits text-center">
+                    <p class="small">I give consent to process my data with the purpose of the recruitment process, in
+                        accordance to
+                        the Regulation of the
+                        European Parliament 679/2016, regarding the protection of natural persons and free movement of
+                        such data</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="./assets/js/main.js"></script>
+
+
+</body>
+
+</html>

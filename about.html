@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#969944">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#969944">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- boostrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <!-- my css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About me</title>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <nav class="navbar">
+            <a href="about.html" class="logo"></a>
+            <div class="wrap__navigation">
+                <ul class="wrap__nav-items">
+                    <li class="nav__item">
+                        <a href="about.html" class="about active">
+                            <img class="icon__nav-item" src="./assets/img/about.png" alt="about icon">
+                            About me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="projects">
+                            <img class="icon__nav-item" src="./assets/img/projects.png" alt="projects icon">
+                            Projects
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="drawings.html" class="drawings">
+                            <img class="icon__nav-item" src="./assets/img/drawings.png" alt="drawings icon">
+                            Drawings
+                        </a>
+                    </li>
+                </ul>
+                <ul class="wrap__contacts">
+                    <li class="contact__link">
+                        <a href="#">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </li>
+                    <li class="contact__link">
+                        <a href="#">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="contact__link">
+                        <a href="#">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="toggle__navbar d-lg-none">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </nav>
+        <main class="wrap__body padding_page">
+            <section class="main__section scroll">
+                <section class="wrap__intro fade-in">
+                    <div class="wrap__profile-pic">
+                        <img class="profile-pic" src="./assets/img/profile-pic.png" alt="profile avatar">
+                        <div class="wrap__contact-links d-flex d-lg-none">
+                            <a href="./assets/pdf/giuliaorsa_cv.pdf" class="btn__custom">
+                                <img src="./assets/img/cv__icon.png" alt="cv icon">
+                                Download CV
+                            </a>
+                            <div class="wrap__icons">
+                                <a href="#">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="wrap__about-me">
+                        <h1>Hi, I'm <span class="green">Giulia</span>!</h1>
+
+
+                        <div class="wrap__main-content intro__about">
+                            <div class="name__fumetto">
+                                <p class="fumetto medium">Giulia</p>
+                            </div>
+                            <div class="wrap__fumetto">
+                                <div class="text__fumetto">
+                                    <p class="fumetto__small">I am an energetic, enterprising and imaginative
+                                        person.
+                                        <span class="blue bold">Creativity</span> is what
+                                        characterizes me most, and I try to express
+                                        it in different ways in the digital world. Whether it's <span
+                                            class="dark-orange bold">graphics</span>, <span
+                                            class="dark-orange bold">design</span>,
+                                        <span class="dark-orange bold">development</span> or <span
+                                            class="dark-orange bold">content creation</span>, seeing a
+                                        project come to life from my creative process is what satisfies me most.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrap__contact-links d-none d-lg-flex">
+                            <a href="./assets/pdf/giuliaorsa_cv.pdf" class="btn__custom">
+                                <img src="./assets/img/cv__icon.png" alt="cv icon">
+                                Download CV
+                            </a>
+                            <div class="wrap__icons">
+                                <a href="#">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+                <section class="wrap__section fade-in">
+                    <div class="wrap__section-header">
+                        <div class="wrap__icon-header">
+                            <img src="./assets/img/icon-projects.png" alt="icon">
+                        </div>
+                        <h2>My Projects</h2>
+                    </div>
+                    <div class="wrap__projects">
+                        <div class="single__project">
+                            <a href="emmebi.html">
+                                <img src="./assets/img/card-emmebi.png" alt="project preview">
+                            </a>
+
+                            <h3>Emmebi Spa</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+                            </div>
+
+                        </div>
+                        <div class="single__project">
+                            <a href="motoexport.html">
+                                <img src="./assets/img/card-motoexport.png" alt="project preview">
+                            </a>
+
+                            <h3>Moto Export</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+                            </div>
+
+                        </div>
+                        <div class="single__project">
+                            <a href="ecobites.html">
+                                <img src="./assets/img/card-ecobites.png" alt="project preview">
+                            </a>
+
+                            <h3>EcoBites</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">UX Design</label>
+                                <label for="single__project" class="project__field">UI Design</label>
+                            </div>
+                        </div>
+                        <div class="single__project">
+                            <a href="swapify.html">
+                                <img src="./assets/img/card-swapify.png" alt="project preview">
+                            </a>
+
+                            <h3>Swapify</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Front-end</label>
+                                <label for="single__project" class="project__field">Back-end</label>
+                            </div>
+
+                        </div>
+                        <div class="single__project">
+                            <a href="rfn.html">
+                                <img src="./assets/img/card-rfn.png" alt="project preview">
+                            </a>
+
+                            <h3>Rooting For Nature</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">Web Design</label>
+                            </div>
+
+                        </div>
+                        <div class="single__project">
+                            <a href="infocus.html">
+                                <img src="./assets/img/card-infocus.png" alt="project preview">
+                            </a>
+
+                            <h3>InFocus</h3>
+                            <div class="wrap">
+                                <label for="single__project" class="project__field">UX Design</label>
+                                <label for="single__project" class="project__field">UI Design</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="wrap__cta mt-3">
+                        <a href="projects.html" class="btn__custom">
+                            <img src="./assets/img/cv__icon.png" alt="cv icon">
+                            See all projects
+                        </a>
+                    </div>
+                </section>
+                <section class="wrap__section fade-in">
+                    <div class="wrap__section-header">
+                        <div class="wrap__icon-header">
+                            <img src="./assets/img/icon-about.png" alt="icon">
+                        </div>
+                        <h2>About me</h2>
+                    </div>
+                    <div class="wrap__info">
+                        <div class="wrap__info-text">
+                            <div class="wrap__text-line">
+                                <div class="single__experience">
+                                    <div class="experience__header">
+                                        <h3>Contacts</h3>
+                                        <p><i class="bi bi-cake2-fill me-1"></i> 30th July 1999</p>
+                                        <p><i class="bi bi-geo-alt-fill me-1"></i> Buccinasco (MI), 20090</p>
+                                        <p><i class="bi bi-telephone-fill me-1"></i> +39 333 1624063</p>
+                                    </div>
+                                </div>
+                                <div class="single__experience">
+                                    <div class="experience__header">
+                                        <h3>Languages</h3>
+                                        <p><span class="flag me-1"><img src="./assets/img/flag-eng.png"
+                                                    alt="flag"></span> English - C1</p>
+                                        <p><span class="flag me-1"><img src="./assets/img/flag-french.png"
+                                                    alt="flag"></span> French - B2</p>
+                                        <p><span class="flag me-1"><img src="./assets/img/flag-german.png"
+                                                    alt="flag"></span> German - A2</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single__experience">
+                                <div class="experience__header">
+                                    <h3>Languages</h3>
+                                    <p><span class="flag me-1"><img src="./assets/img/flag-eng.png" alt="flag"></span>
+                                        First Certificate - Cambridge English</p>
+                                    <p><span class="flag me-1"><img src="./assets/img/flag-french.png"
+                                                alt="flag"></span> Bbtween Lingue - Università degli Studi di Milano -
+                                        Bicocca</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap__profile-pic">
+                            <img class="profile-pic" src="./assets/img/profile-pic-real.png" alt="profile picture">
+                        </div>
+
+                    </div>
+
+                </section>
+                <section class="wrap__section fade-in">
+                    <div class="wrap__section-header">
+                        <div class="wrap__icon-header">
+                            <img src="./assets/img/icon-work.png" alt="icon">
+                        </div>
+                        <h2>Work Experience</h2>
+                    </div>
+                    <div class="wrap__experience">
+                        <div class="single__experience">
+                            <div class="experience__header">
+                                <p>Feb 2024 - <span>Now</span></p>
+                                <h3>Web Designer</h3>
+                                <h5>Softweb ABL Solutions</h5>
+                            </div>
+                            <div class="wrap">
+                                <p>I am responsible for creating visually appealing and <b>user-friendly websites</b>. I
+                                    combine my <b>graphic designg</b> skills with
+                                    technical knowledge of <b>web development</b> languages like HTML, CSS, and
+                                    JavaScript. My
+                                    role involves designing layouts,
+                                    selecting color schemes, and typography, and ensuring a seamless <b>User
+                                        Experience</b> as
+                                    well as a pleasante <b>User Interface</b>.</p>
+                            </div>
+                        </div>
+                        <div class="single__experience">
+                            <div class="experience__header">
+                                <p>Jan 2023 - Jan 2024</p>
+                                <h3>Digital Communication Specialist</h3>
+                                <h5>Smart Creative Srl | thefaculty</h5>
+                            </div>
+                            <div class="wrap">
+                                <p>I managed and enhanced online <b>communication strategies</b> to engage audiences
+                                    effectively. I created and curated content
+                                    for various digital platforms, including <b>email campaigns</b> and <b>blog
+                                        articles</b>.
+                                    Collaborating with different departments,
+                                    also followed <b>UX processes</b> and brainstorming to improve our product. My role
+                                    combined together creativity, analytical
+                                    skills and communication.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="wrap__section fade-in">
+                    <div class="wrap__double-section">
+                        <div class="wrap__education">
+                            <div class="wrap__section-header">
+                                <div class="wrap__icon-header">
+                                    <img src="./assets/img/icon-education.png" alt="icon">
+                                </div>
+                                <h2>Education</h2>
+                            </div>
+                            <div class="wrap__single-education mt-5">
+                                <div class="wrap__line mt-5">
+                                    <span class="circle"></span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>2021 - 2024</p>
+                                        <h3>Communication’s Theory and Technology</h3>
+                                        <h5>Master’s Degree | Università degli Studi di Milano - Bicocca</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>The course offers a broad view of <b>User Experience themes</b>, from the
+                                            psychological bases of communication to practical
+                                            <b>HTML/CSS implementations</b>. During the course many projects were made
+                                            applying
+                                            different techniques learning all the
+                                            research process.
+                                        </p>
+                                        <p>I graduated with <b>110L/110</b>. My thesis was an experimental study about
+                                            the
+                                            UX/UI of an app to reduce food waste.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap__single-education">
+                                <div class="wrap__line">
+                                    <span class="circle mt-5"></span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>Jul 2023 - Gen 2024</p>
+                                        <h3>Full Stack Web Developer</h3>
+                                        <h5>Specialization Course | Digitazon Tech School</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>Specialization course for <b>Full Stack Web Developers</b>. It included
+                                            theoretical
+                                            lessons on <b>Front-end</b> and <b>Back-end</b>,
+                                            especially React, Node.js and MongoDB. Numerous project exercises and a
+                                            final complete site development project were
+                                            carried out.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap__single-education">
+                                <div class="wrap__line">
+                                    <span class="circle mt-5"></span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>2018 - 2021</p>
+                                        <h3>Psychosocial Sciences of Communication</h3>
+                                        <h5>Bachelor’s Degree | Università degli Studi di Milano - Bicocca</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>The course offers multidisciplinary training in psychological processes
+                                            underlying <b>communication</b> and <b>new media</b> theories
+                                            and techniques. During the course many projects were made in different
+                                            areas, from psychological experiment to social
+                                            media projects.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap__single-education">
+                                <div class="wrap__line">
+                                    <span class="circle mt-5"></span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>2013 - 2018</p>
+                                        <h3>Liguistic High School</h3>
+                                        <h5>High School | Liceo Gaetana Agnesi</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p><b>Linguistic high school</b> which offers an immersive education in
+                                            <b>English</b>,
+                                            <b>French</b>, and <b>German</b>. The curriculum includes
+                                            literature, grammar, and conversation classes, alongside opportunities for
+                                            language immersion experiences.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap__education">
+                            <div class="wrap__section-header justify-content-end">
+                                <div class="wrap__icon-header">
+                                    <img src="./assets/img/icon-abroad.png" alt="icon">
+                                </div>
+                                <h2>Abroad</h2>
+                            </div>
+                            <div class="wrap__single-education mt-5">
+
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>Mar 2018</p>
+                                        <h3>Linguistic Stage | German</h3>
+                                        <h5>Würzburg, Germany</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>A two-week language immersion program in Würzburg, Germany. This offered me
+                                            an enriching experience staying with host
+                                            families and participating in a school-to-work transition program in the
+                                            tourism sector. Mornings were dedicated to
+                                            intensive German language classes focused on improving fluency and
+                                            comprehension. Afternoons were spent working in local
+                                            tourism businesses and doing cultural activities around the city, to gain
+                                            practical experience and apply language skills
+                                            in real-world settings.</p>
+
+                                    </div>
+                                </div>
+                                <div class="wrap__line mt-5">
+                                    <span class="circle"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="wrap__single-education">
+
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>Mar 2017</p>
+                                        <h3>Linguistic Stage | English</h3>
+                                        <h5>Dublin, Ireland</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>A two-week language immersion program in Dublin, Ireland. This offered me an
+                                            enriching experience staying with host
+                                            families and participating in a school-to-work transition program in the
+                                            literature sector. Mornings were dedicated to
+                                            intensive advanced English language classes focused on improving fluency and
+                                            comprehension. Afternoons were spent doing
+                                            cultural activities around the city, to gain practical experience and apply
+                                            language skills in real-world settings.</p>
+
+                                    </div>
+                                </div>
+                                <div class="wrap__line">
+                                    <span class="circle mt-5"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="wrap__single-education">
+
+                                <div class="single__experience mb-3">
+                                    <div class="experience__header">
+                                        <p>Mar 2016</p>
+                                        <h3>Linguistic Stage | French</h3>
+                                        <h5>Montpellier, France</h5>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>A two-week language immersion program in Montepellier, France. This offered
+                                            me an enriching experience staying with host
+                                            families and participating in a school-to-work transition program in the
+                                            tourism sector. Mornings were dedicated to
+                                            intensive French language classes focused on improving fluency and
+                                            comprehension. Afternoons were spent doing cultural
+                                            activities around the city, to gain practical experience and apply language
+                                            skills in real-world settings.</p>
+
+                                    </div>
+                                </div>
+                                <div class="wrap__line">
+                                    <span class="circle mt-5"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="wrap__section fade-in">
+                    <div class="wrap__section-header">
+                        <div class="wrap__icon-header">
+                            <img src="./assets/img/icon-hobby.png" alt="icon">
+                        </div>
+                        <h2>Free time</h2>
+                    </div>
+                    <div class="wrap__hobby">
+                        <p>I have been <b>drawing</b> since I was a child, and it has always been my favorite form of
+                            artistic
+                            expression. Initially, I
+                            used <b>paper and pencils</b> to bring my ideas to life, finding joy in the simplicity of
+                            these
+                            tools. Over the years, I have
+                            started to experiment with other mediums, expanding my creative horizons. Recently, I have
+                            explored <b>digital drawing</b>,
+                            which offers new possibilities and techniques. Additionally, I have begun creating art on
+                            different materials, such as
+                            <b>shirts</b> and <b>tote bags</b>, adding a unique twist to my work. This experimentation
+                            has enriched
+                            my artistic journey,
+                            allowing me to express myself in diverse and exciting ways.
+                        </p>
+                        <div id="splideHobbies" class="splide">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="./assets/img/img-hobby-1.png" alt="drawing">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="./assets/img/img-hobby-2.png" alt="drawing">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="./assets/img/img-hobby-3.png" alt="drawing">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="./assets/img/img-hobby-4.png" alt="drawing">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="./assets/img/img-hobby-5.png" alt="drawing">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="./assets/img/img-hobby-6.png" alt="drawing">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn__custom">
+                        <img src="./assets/img/cv__icon.png" alt="cv icon">
+                        See my drawings
+                    </a>
+
+
+                </section>
+            </section>
+        </main>
+        <footer class="wrap__footer">
+            <div class="wrap__credits">
+                <img src="./assets/img/logo_hover.png" alt="logo">
+                <div class="wrap__text">
+                    <p>Website realized by Giulia Orsa</p>
+                    <p class="small">Icons Credits: manaloka.com</p>
+                </div>
+            </div>
+            <div class="wrap__experience">
+                <div class="wrap__credits text-center">
+                    <p class="small">Thanks you for visiting my portfolio, I hope you liked it!
+                        For comments or any advice write me an email to giulia.orsa@gmail.com</p>
+                </div>
+                <div class="wrap__credits text-center">
+                    <p class="small">I give consent to process my data with the purpose of the recruitment process, in
+                        accordance to
+                        the Regulation of the
+                        European Parliament 679/2016, regarding the protection of natural persons and free movement of
+                        such data</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideHobbies', {
+                perPage: 3,
+                perMove: 1,
+                rewind: true,
+                gap: '2rem',
+
+                breakpoints: {
+                    768: {
+                        perPage: 2,
+                    },
+                    568: {
+                        perPage: 1,
+                    }
+                },
+            }).mount();
+            $('#splideHobbies .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
+</body>
+
+</html>
