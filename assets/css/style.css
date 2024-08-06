@@ -1125,6 +1125,11 @@ nav.navbar {
     .wrap__projects[data-layout="projects"] {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+
+    .wrap__projects>.single__project:not(:first-child) {
+        padding-top: clamp(1rem, 5vw, 3rem);
+        border-top: 1px solid var(--brown-300);
+    }
 }
 
 .single__project {
@@ -1372,12 +1377,25 @@ span.flag img {
 
 .wrap__project-images {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: clamp(1rem, 20vw, 2rem)
 }
 
-.wrap__project-images img {
+@media screen and (max-width: 992px) {
+    .wrap__project-images {
+        margin-top: 2rem;
+    }
+}
+
+.wrap__project-images img.project-logo[data-type="text"] {
+    height: 3rem;
+}
+
+.wrap__project-images img.project-logo[data-type="icon"] {
+    height: 4rem;
+}
+
+.wrap__project-images img:not(.project-logo) {
     margin-right: auto;
     max-width: 80%;
     width: auto;
@@ -1385,7 +1403,7 @@ span.flag img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.319);
 }
 
-.wrap__project-images img:nth-child(even) {
+.wrap__project-images img:nth-child(odd) {
     margin-right: unset;
     margin-left: auto;
 
@@ -1407,6 +1425,7 @@ span.flag img {
     display: flex;
     flex-direction: row;
     gap: clamp(0.5rem, 20vw, 1rem);
+    flex-wrap: wrap;
 }
 
 .wrap__details .wrap[data-orientation="horizontal"] {
@@ -1414,6 +1433,12 @@ span.flag img {
     flex-direction: row;
     gap: clamp(1rem, 10vw, 1.5rem);
     flex-wrap: wrap;
+}
+
+@media screen and (max-width:992px) {
+    .wrap__details .wrap[data-orientation="horizontal"] {
+        justify-content: center;
+    }
 }
 
 .wrap__icon-text {
