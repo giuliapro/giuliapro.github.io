@@ -121,6 +121,14 @@ ul {
 * {
     scroll-behavior: smooth;
     scroll-padding: 2rem;
+    cursor: url('../img/custom-cursor.png'), auto !important;
+}
+
+* button :hover,
+* a:hover,
+* a img:hover,
+* a i:hover {
+    cursor: url('../img/custom-cursor-hover.png'), auto !important;
 }
 
 html,
