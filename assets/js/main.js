@@ -26,6 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
         navNavbar.classList.toggle('active')
     });
 
+    document.addEventListener('click', function (event) {
+        if (!navNavbar.contains(event.target)) {
+            navToggle.classList.remove('active');
+            navNavigation.classList.remove('show');
+            navNavItems.classList.remove('show');
+            navNavbar.classList.remove('active');
+        }
+    });
+
 
     // scroll animation
 
