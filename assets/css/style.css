@@ -247,7 +247,7 @@ h3,
 h4,
 h5 {
     font-weight: 500;
-    line-height: 120%;
+    line-height: 110%;
     color: var(--primary);
 }
 
@@ -1055,10 +1055,15 @@ nav.navbar {
         gap: 1rem;
         width: 100%;
         order: 2;
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+    }
+
+    .wrap__profile-pic img.profile-picture {
+        max-width: 200px;
+        align-self: center;
     }
 
     .wrap__contact-links {
@@ -1190,7 +1195,7 @@ nav.navbar {
     display: flex;
     gap: clamp(1rem, 5vw, 3rem);
     width: 100%;
-    align-items: center;
+    align-items: top;
     justify-content: space-between;
 }
 
@@ -1208,7 +1213,16 @@ nav.navbar {
     gap: clamp(0.5rem, 5vw, 2rem);
 }
 
-@media screen and (max-width:768px) {
+.wrap__icons.about {
+    display: flex;
+    margin-top: clamp(0.25rem, 5vw, 0.5rem);
+    row-gap: clamp(0.5rem, 5vw, 1rem);
+    column-gap: clamp(0.25rem, 5vw, 0.5rem);
+    width: auto;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width:992px) {
 
     .wrap__info {
         flex-direction: column;
