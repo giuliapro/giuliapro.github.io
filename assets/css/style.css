@@ -391,6 +391,19 @@ a[href^="tel:"] {
     transition: all 0.2s ease-in-out;
 }
 
+.icon-brown.stroke {
+    stroke: var(--brown-600);
+    fill: none;
+    aspect-ratio: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.icon-brown.fill {
+    fill: var(--brown-600);
+    aspect-ratio: 1;
+    transition: all 0.2s ease-in-out;
+}
+
 /* sizes */
 
 .icon-xxs {
@@ -476,6 +489,19 @@ button.project__field.active {
 
 
 /* #endregion */
+
+
+
+/* #region Tooltip */
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--brown-600);
+    --bs-tooltip-color: var(--beige-100);
+}
+
+/* #endregion */
+
+
 
 /* #region Scrollbar */
 ::-webkit-scrollbar {
@@ -1280,7 +1306,8 @@ span.flag img {
     gap: 0.5rem;
 }
 
-.single__experience>.experience__header p {
+.single__experience>.experience__header p,
+.single__experience>.experience__header a {
     color: var(--brown-600);
 }
 
