@@ -167,6 +167,10 @@ body {
         padding-top: 80px;
     }
 
+    .wrap__body:has(> .container-landing) {
+        padding: 2rem clamp(2rem, 5vw, 5rem);
+    }
+
     .wrap__body[data-height="full"] {
         padding-top: 1rem;
     }
@@ -562,7 +566,7 @@ button.project__field.active {
 
 @media screen and (max-width:992px) {
     .overlay__fumetto {
-        padding-block: clamp(3rem, 5vw, 4rem);
+        padding-block: clamp(4rem, 5vw, 6rem);
     }
 }
 
@@ -3326,6 +3330,17 @@ button.project__field.active {
 
     80% {
         opacity: 0;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+
+    .switch-container,
+    .scene-overlay {
+        scale: 80%;
+        top: 40%;
+        left: 40%;
     }
 }
 
