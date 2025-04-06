@@ -38,6 +38,12 @@
 
 <body>
 
+    <!-- Loader -->
+    <div id="loader-overlay">
+        <!-- Qui va inserito l'SVG -->
+        <div id="svg-container"></div>
+    </div>
+
     <div class="wrap">
         <nav class="navbar">
             <a href="about.html" class="logo"></a>
@@ -157,7 +163,7 @@
                             </div>
 
                         </div>
-                        <div class="single__project" data-target="web-design">
+                        <div class="single__project" data-target="web-design graphic-design">
                             <a href="prinx.html">
                                 <img src="./assets/img/covers/prinx-cover.png" alt="project preview">
                             </a>
@@ -165,6 +171,7 @@
                             <h3>PRINX</h3>
                             <div class="wrap">
                                 <label for="single__project" class="project__field">Web Design</label>
+                                <label for="single__project" class="project__field">Graphic Design</label>
                             </div>
                             <div class="wrap">
                                 <svg class="icon-dark stroke icon-s icon-nav">
@@ -666,6 +673,11 @@
         </footer>
     </div>
 
+
+
+    <!-- GSAP e plugin -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

@@ -101,4 +101,73 @@ document.addEventListener('DOMContentLoaded', function () {
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 
+
+
+
+
+
+
+    // loader
+    const loader = document.getElementById('loader-overlay');
+    const svgContainer = document.getElementById('svg-container');
+
+    // Carica lo SVG da file esterno
+    fetch('assets/img/svg/loader.svg')
+        .then(res => res.text())
+        .then(svg => {
+            svgContainer.innerHTML = svg;
+
+            // Dopo che è stato inserito nel DOM, possiamo animare
+            gsap.registerPlugin(MotionPathPlugin);
+
+            // Inserisci qui tutte le tue animazioni GSAP originali
+            gsap.to("#whole-island", { transformOrigin: "bottom center", y: -15, rotation: 1, duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.fromTo("#tree", { rotation: -6, transformOrigin: "bottom center" }, { rotation: 5, duration: 2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to("#leaf1", { transformOrigin: "center right", y: -3, duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.fromTo("#leaf2", { rotation: 3, transformOrigin: "bottom right" }, { rotation: -4, x: -3, y: -3, duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to("#leaf3", { rotation: -6, transformOrigin: "bottom center", duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to("#leaf4", { rotation: -6, y: -3, transformOrigin: "bottom left", duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to("#leaf5", { y: -3, transformOrigin: "top left", duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to("#water-circle1", { scaleX: 1.2, transformOrigin: "center center", duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to("#water-circle2", { scaleX: 0.8, transformOrigin: "center center", duration: 1, ease: "sine.inOut", yoyo: true, repeat: -1, delay: -0.5 });
+            gsap.fromTo("#tri-wave1", { x: -60 }, { x: 20, duration: 6, repeat: -1, ease: "none" });
+            gsap.fromTo("#tri-wave2", { x: -10 }, { x: 50, duration: 6, repeat: -1, ease: "none" });
+            gsap.fromTo("#tri-wave1>path, #tri-wave2>path", { scaleY: 0 }, { scaleY: 1, duration: 1, repeat: -1, yoyo: true, transformOrigin: "bottom center" });
+            gsap.fromTo("#sine-wave-group *", { x: 0 }, { x: 75, repeat: -1, duration: 2, ease: "none" });
+            gsap.fromTo("#sine-wave-group *", { scaleY: 0.8, transformOrigin: "bottom center" }, { scaleY: 1.2, transformOrigin: "bottom center", repeat: -1, duration: 1, yoyo: true, ease: "sine.inOut" });
+            gsap.set("#fish-path", { scaleX: 1.3, scaleY: 1.3, transformOrigin: "bottom left" });
+            gsap.to("#fish", {
+                duration: 3,
+                repeat: -1,
+                repeatDelay: 4,
+                ease: "slow(0.3, 0.7, false)",
+                motionPath: {
+                    path: "#fish-path",
+                    align: "#fish-path",
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: true,
+                    start: 0,
+                    end: 1
+                }
+            });
+        });
+
+    // Link click → mostra loader
+    const links = Array.from(document.querySelectorAll('a[href]')).filter(link => link.target !== '_blank');
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            loader.classList.add('visible');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 1000);
+        });
+    });
+
+    // All'apertura pagina
+    window.addEventListener('load', () => {
+        loader.classList.remove('visible');
+    });
+
 });

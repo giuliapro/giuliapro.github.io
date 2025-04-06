@@ -50,6 +50,12 @@
 
 <body>
 
+    <!-- Loader -->
+    <div id="loader-overlay">
+        <!-- Qui va inserito l'SVG -->
+        <div id="svg-container"></div>
+    </div>
+
     <div class="wrap">
         <nav class="navbar">
             <a href="about.html" class="logo"></a>
@@ -103,7 +109,7 @@
                     <div class="wrap__profile-pic">
                         <img class="profile-pic" src="./assets/img/profile-pic.png" alt="profile avatar">
                         <div class="wrap__contact-links d-flex d-lg-none">
-                            <a href="./assets/pdf/giuliaorsa_cv.pdf" class="btn__custom">
+                            <a href="./assets/pdf/giuliaorsa_cv_new.pdf" target="_blank" class="btn__custom">
                                 <i class="bi bi-file-earmark-person"></i>
                                 Download CV
                             </a>
@@ -184,8 +190,10 @@
                             <h3>Miryce</h3>
                             <div class="wrap">
                                 <label for="single__project" class="project__field">Web Design</label>
+                                <label for="single__project" class="project__field">Graphic Design</label>
                                 <label for="single__project" class="project__field">Front-end</label>
                                 <label for="single__project" class="project__field">Back-end</label>
+                                <label for="single__project" class="project__field">Social Media</label>
                             </div>
 
 
@@ -198,6 +206,7 @@
                             <h3>PRINX</h3>
                             <div class="wrap">
                                 <label for="single__project" class="project__field">Web Design</label>
+                                <label for="single__project" class="project__field">Graphic Design</label>
                             </div>
 
                         </div>
@@ -211,6 +220,7 @@
                                 <label for="single__project" class="project__field">Web Design</label>
                                 <label for="single__project" class="project__field">Front-end</label>
                                 <label for="single__project" class="project__field">Back-end</label>
+                                <label for="single__project" class="project__field">Social Media</label>
                             </div>
 
 
@@ -223,6 +233,7 @@
                             <h3>AntFactory</h3>
                             <div class="wrap">
                                 <label for="single__project" class="project__field">Web Design</label>
+                                <label for="single__project" class="project__field">Graphic Design</label>
                             </div>
 
                         </div>
@@ -234,6 +245,7 @@
                             <h3>Zebrah Marketing Agency</h3>
                             <div class="wrap">
                                 <label for="single__project" class="project__field">Web Design</label>
+                                <label for="single__project" class="project__field">Graphic Design</label>
                             </div>
 
                         </div>
@@ -245,6 +257,7 @@
                             <h3>Emmebi Spa</h3>
                             <div class="wrap">
                                 <label for="single__project" class="project__field">Web Design</label>
+                                <label for="single__project" class="project__field">Graphic Design</label>
                             </div>
 
                         </div>
@@ -766,6 +779,11 @@
             </div>
         </footer>
     </div>
+
+
+    <!-- GSAP e plugin -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

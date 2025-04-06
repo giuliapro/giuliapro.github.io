@@ -552,13 +552,55 @@ button.project__field.active {
 /* #endregion */
 
 
+/* #region Loader Island */
+
+/* LOADER OVERLAY */
+#loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 99999999999999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+#loader-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* SVG styling */
+.illustration {
+    max-height: 240px;
+    max-width: 220px;
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .illustration {
+        transform: scale(0.7);
+        transform-origin: bottom right;
+    }
+}
+
+/* #endregion */
+
 /* #region Fuffi landing */
 
 .overlay__fumetto {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 9999999;
+    z-index: 999;
     top: 0;
     overflow: hidden !important;
     display: flex;
@@ -3994,11 +4036,12 @@ nav.navbar {
 .project__field {
     background-color: var(--brown-300);
     width: fit-content;
-    padding: 0.25rem 1rem;
+    padding: 0.15rem 0.75rem;
     color: var(--beige-100);
     border-radius: 2rem;
     height: fit-content;
     text-wrap: nowrap;
+    font-size: 0.8rem;
 }
 
 .single__project a {
