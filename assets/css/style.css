@@ -589,6 +589,7 @@ button.project__field.active {
     .illustration {
         transform: scale(0.7);
         transform-origin: bottom right;
+        padding-bottom: 10vh;
     }
 }
 
