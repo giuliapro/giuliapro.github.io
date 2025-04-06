@@ -589,7 +589,7 @@ button.project__field.active {
     .illustration {
         transform: scale(0.7);
         transform-origin: bottom right;
-        padding-bottom: 10vh;
+        padding-bottom: 5vh;
     }
 }
 
@@ -611,7 +611,7 @@ button.project__field.active {
 
 @media screen and (max-width:992px) {
     .overlay__fumetto {
-        padding-block: clamp(4rem, 5vw, 6rem);
+        padding-block: clamp(3rem, 5vw, 4rem);
     }
 }
 
