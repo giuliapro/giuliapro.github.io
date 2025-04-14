@@ -30,6 +30,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- my css -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,15 +111,12 @@
                         </div>
                     </div>
 
+                    <!--  -->
+
+
                     <div class="wrap__project-details">
-                        <div class="wrap__experience">
-                            <div class="wrap__project-images order-2 order-lg-1">
-                                <img class="project-logo mx-auto" data-type="text"
-                                    src="./assets/img/projects/logo-rfn.png" alt="project logo">
-                                <img src="./assets/img/projects/rfn-1.png" alt="project image">
-                                <img src="./assets/img/projects/rfn-2.png" alt="project image">
-                                <img src="./assets/img/projects/rfn-3.png" alt="project image">
-                            </div>
+                        <div class="wrap__experience" data-orientation="vertical">
+
                             <div class="wrap__details order-1 order-lg-2">
 
                                 <div class="wrap">
@@ -127,6 +126,27 @@
 
                                     </div>
 
+                                </div>
+                                <div class="wrap">
+                                    <img class="image__mock-up" src="assets/img/card-rfn.png" alt="mock-up project">
+                                </div>
+                                <div class="wrap">
+                                    <div id="splideProject" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/rfn-1.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/rfn-2.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/rfn-3.png" alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="wrap">
                                     <h3>Description</h3>
@@ -139,66 +159,72 @@
                                         the regeneration of ecosystems.
                                     </p>
                                 </div>
-                                <div class="wrap">
-                                    <h3>My role in the project</h3>
-                                    <p>My colleagues and I took care of creating the <b>design system</b>, defining the
-                                        visual and functional guidelines of the site.
-                                        We developed <b>layouts</b> and <b>mock-ups</b> to outline the structure and
-                                        visual appearance of the user interface. Furthermore, we
-                                        took care of the code design of the site template, using <b>HTML</b>,
-                                        <b>CSS</b> and <b>Bootstrap</b> to build a functional and
-                                        responsive platform, which ensured fluid navigation and an optimal user
-                                        experience.
+                                <div class="wrap__experience">
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>My role in the project</h3>
+                                            <p>My colleagues and I took care of creating the <b>design system</b>,
+                                                defining the
+                                                visual and functional guidelines of the site.
+                                                We developed <b>layouts</b> and <b>mock-ups</b> to outline the structure
+                                                and
+                                                visual appearance of the user interface. Furthermore, we
+                                                took care of the code design of the site template, using <b>HTML</b>,
+                                                <b>CSS</b> and <b>Bootstrap</b> to build a functional and
+                                                responsive platform, which ensured fluid navigation and an optimal user
+                                                experience.
 
-                                    </p>
-                                </div>
-
-
-                                <div class="wrap">
-                                    <h3>Tools and methods</h3>
-                                    <div class="wrap" data-orientation="horizontal">
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#figma">
-                                            </svg>
-                                            <p class="small">Figma</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#html">
-                                            </svg>
-                                            <p class="small">HTML</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#css">
-                                            </svg>
-                                            <p class="small">CSS</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#bootstrap">
-                                            </svg>
-                                            <p class="small">Bootstrap</p>
+                                            </p>
                                         </div>
 
                                     </div>
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>Tools and methods</h3>
+                                            <div class="wrap" data-orientation="horizontal">
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#figma">
+                                                    </svg>
+                                                    <p class="small">Figma</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#html">
+                                                    </svg>
+                                                    <p class="small">HTML</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#css">
+                                                    </svg>
+                                                    <p class="small">CSS</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#bootstrap">
+                                                    </svg>
+                                                    <p class="small">Bootstrap</p>
+                                                </div>
 
+                                            </div>
+
+                                        </div>
+                                        <div class="wrap w-100 align-items-center align-items-lg-start">
+                                            <a href="https://github.com/mxelm/RootingForNature" class="btn__custom"
+                                                target="_blank">
+                                                <i class="bi bi-link-45deg"></i>
+                                                Link to project
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="wrap w-100 align-items-center align-items-lg-start">
-                                    <a href="https://github.com/mxelm/RootingForNature" class="btn__custom"
-                                        target="_blank">
-                                        <i class="bi bi-link-45deg"></i>
-                                        Link to project
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
 
 
                     </div>
-
-
 
                 </section>
 
@@ -238,7 +264,33 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProject', {
+                type: 'loop',
+                perPage: 2,
+                perMove: 1,
+                gap: '2rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProject .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
 
 
 </body>

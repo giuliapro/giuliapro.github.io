@@ -373,6 +373,14 @@ a[href^="tel:"] {
 
 }
 
+@media screen and (max-width:768px) {
+
+    .fumetto {
+        font-size: 1rem;
+    }
+
+}
+
 /* #endregion */
 
 /* #region Icons */
@@ -497,6 +505,12 @@ button.project__field {
 
 button.project__field.active {
     background-color: var(--brown-600);
+}
+
+/* splide btn */
+
+.splide__arrow svg path {
+    pointer-events: none;
 }
 
 
@@ -3381,12 +3395,12 @@ button.project__field.active {
 
 @media screen and (max-width:768px) {
 
-    .switch-container,
+    /* .switch-container,
     .scene-overlay {
         scale: 80%;
         top: 40%;
         left: 40%;
-    }
+    } */
 }
 
 
@@ -3536,7 +3550,7 @@ button.project__field.active {
 @media screen and (max-width:768px) {
     .select__option {
         z-index: 99999;
-        scale: 80%;
+        scale: 70%;
         top: -8rem;
         right: -4rem;
     }
@@ -3801,6 +3815,8 @@ nav.navbar {
     background-color: var(--beige-200);
     border-radius: 1rem;
     flex: 1 1 auto;
+    max-width: 1440px;
+    margin: auto;
 }
 
 .main__section.scroll {
@@ -3992,7 +4008,7 @@ nav.navbar {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
 
     .wrap__projects,
     .wrap__projects[data-layout="projects"],
@@ -4127,12 +4143,17 @@ span.flag img {
     gap: clamp(1rem, 5vw, 3rem);
 }
 
+.wrap__experience[data-orientation="vertical"] {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 5vw, 3rem);
+}
+
 @media screen and (max-width: 992px) {
     .wrap__experience {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
-
 
 
 .single__experience {
@@ -4261,6 +4282,14 @@ span.flag img {
     width: 100%;
 }
 
+.wrap__details .wrap:has(.project__field) {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+}
+
 .wrap__back-btn {
     margin-bottom: 2rem;
 }
@@ -4279,6 +4308,12 @@ span.flag img {
     .wrap__project-images {
         margin-top: 2rem;
     }
+}
+
+.wrap__project-details img.image__mock-up {
+    max-width: 1200px;
+    width: 60vw;
+    margin: auto;
 }
 
 .wrap__project-images img.project-logo[data-type="text"] {
@@ -4342,6 +4377,36 @@ span.flag img {
     align-items: center;
     gap: clamp(0.5rem, 5vw, 1rem);
     min-width: 5rem;
+}
+
+#splideProjectApp {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+#splideProjectApp .splide__slide {
+    max-height: 600px;
+    width: 100%;
+}
+
+#splideProjectApp .splide__slide img {
+    width: auto;
+    border-radius: 1rem;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width:768px) {
+    #splideProjectApp .splide__slide {
+        max-height: 500px;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+    }
+
 }
 
 

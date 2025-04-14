@@ -30,6 +30,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- my css -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,20 +111,42 @@
                         </div>
                     </div>
 
+                    <!--  -->
+
                     <div class="wrap__project-details">
-                        <div class="wrap__experience">
-                            <div class="wrap__project-images order-2 order-lg-1">
-                                <img class="project-logo mx-auto" data-type="icon"
-                                    src="./assets/img/projects/logo-emmebi.png" alt="project logo">
-                                <img src="./assets/img/projects/emmebi-1.png" alt="project image">
-                                <img src="./assets/img/projects/emmebi-2.png" alt="project image">
-                                <img src="./assets/img/projects/emmebi-3.png" alt="project image">
-                            </div>
+                        <div class="wrap__experience" data-orientation="vertical">
+
                             <div class="wrap__details order-1 order-lg-2">
 
                                 <div class="wrap">
                                     <h2>Emmebi Spa</h2>
-                                    <label for="single__project" class="project__field">Web Design</label>
+                                    <div class="wrap">
+                                        <label for="single__project" class="project__field">Web Design</label>
+                                        <label for="single__project" class="project__field">Graphic Design</label>
+                                        <label for="single__project" class="project__field">Front-end</label>
+                                    </div>
+
+                                </div>
+                                <div class="wrap">
+                                    <img class="image__mock-up" src="assets/img/card-emmebi.png" alt="mock-up project">
+                                </div>
+                                <div class="wrap">
+                                    <div id="splideProject" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/emmebi-1.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/emmebi-2.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/emmebi-3.png" alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="wrap">
                                     <h3>Description</h3>
@@ -135,91 +159,103 @@
                                         viewing it in different environments for a realistic view of the final result.
                                     </p>
                                 </div>
-                                <div class="wrap">
-                                    <h3>My role in the project</h3>
-                                    <p>I was responsible for the development of the <b>configurator management
-                                            system</b>, designing and implementing the content
-                                        insertion logic to ensure that each option is easily configurable. I took care
-                                        of the <b>design</b> to make the user interface
-                                        clear and intuitive, and I managed the connections between the various
-                                        components of the configurator to ensure fluid
-                                        navigation. Furthermore, I developed the <b>management logic</b> of the
-                                        configurator to allow the customer to operate in total
-                                        autonomy, facilitating interaction with the customization tools and viewing
-                                        choices in real time.
-                                    </p>
-                                </div>
-                                <div class="wrap">
-                                    <h3>Additional work: Photo editing</h3>
-                                    <p>I also took care of the <b>scanning</b> of the fabrics and the <b>editing</b> of
-                                        the photos. I set up a photographic set to obtain
-                                        detailed images and previews of the fabrics, and used <b>Photoshop</b> to modify
-                                        the materials, extract swatches, previews and
-                                        textures, ensuring that each fabric was accurately represented in the
-                                        configurator.
-                                    </p>
-                                </div>
-                                <div class="wrap">
-                                    <h3>Tools and methods</h3>
-                                    <div class="wrap" data-orientation="horizontal">
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#html">
-                                            </svg>
-                                            <p class="small">HTML 5</p>
+                                <div class="wrap__experience">
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>My role in the project</h3>
+                                            <p>I was responsible for the development of the <b>configurator management
+                                                    system</b>, designing and implementing the content
+                                                insertion logic to ensure that each option is easily configurable. I
+                                                took care
+                                                of the <b>design</b> to make the user interface
+                                                clear and intuitive, and I managed the connections between the various
+                                                components of the configurator to ensure fluid
+                                                navigation. Furthermore, I developed the <b>management logic</b> of the
+                                                configurator to allow the customer to operate in total
+                                                autonomy, facilitating interaction with the customization tools and
+                                                viewing
+                                                choices in real time.
+                                            </p>
                                         </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#css">
-                                            </svg>
-                                            <p class="small">CSS 3</p>
+                                        <div class="wrap">
+                                            <h3>Additional work: Photo editing</h3>
+                                            <p>I also took care of the <b>scanning</b> of the fabrics and the
+                                                <b>editing</b> of
+                                                the photos. I set up a photographic set to obtain
+                                                detailed images and previews of the fabrics, and used <b>Photoshop</b>
+                                                to modify
+                                                the materials, extract swatches, previews and
+                                                textures, ensuring that each fabric was accurately represented in the
+                                                configurator.
+                                            </p>
                                         </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#js">
-                                            </svg>
-                                            <p class="small">JavaScript</p>
+
+                                    </div>
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>Tools and methods</h3>
+                                            <div class="wrap" data-orientation="horizontal">
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#html">
+                                                    </svg>
+                                                    <p class="small">HTML 5</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#css">
+                                                    </svg>
+                                                    <p class="small">CSS 3</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#js">
+                                                    </svg>
+                                                    <p class="small">JavaScript</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#bootstrap">
+                                                    </svg>
+                                                    <p class="small">Bootstrap</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#devexpress">
+                                                    </svg>
+                                                    <p class="small">DevExpress</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#figma">
+                                                    </svg>
+                                                    <p class="small">Figma</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#ps">
+                                                    </svg>
+                                                    <p class="small">Photoshop</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#ai">
+                                                    </svg>
+                                                    <p class="small">Illustrator</p>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#bootstrap">
-                                            </svg>
-                                            <p class="small">Bootstrap</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#devexpress">
-                                            </svg>
-                                            <p class="small">DevExpress</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#figma">
-                                            </svg>
-                                            <p class="small">Figma</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#ps">
-                                            </svg>
-                                            <p class="small">Photoshop</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#ai">
-                                            </svg>
-                                            <p class="small">Illustrator</p>
+                                        <div class="wrap w-100 align-items-center align-items-lg-start">
+                                            <a href="https://drive.google.com/drive/u/0/folders/1ERrgc3U_ppMwj7Je5TEg7y1Mf05Aun6x"
+                                                class="btn__custom" target="_blank">
+                                                <i class="bi bi-link-45deg"></i>
+                                                Link to project
+                                            </a>
                                         </div>
                                     </div>
+                                </div>
 
-                                </div>
-                                <div class="wrap w-100 align-items-center align-items-lg-start">
-                                    <a href="https://drive.google.com/drive/u/0/folders/1ERrgc3U_ppMwj7Je5TEg7y1Mf05Aun6x"
-                                        class="btn__custom" target="_blank">
-                                        <i class="bi bi-link-45deg"></i>
-                                        Link to project
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
@@ -266,7 +302,33 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProject', {
+                type: 'loop',
+                perPage: 2,
+                perMove: 1,
+                gap: '2rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProject .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
 
 
 </body>

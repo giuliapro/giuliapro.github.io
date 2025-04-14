@@ -30,6 +30,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- my css -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,19 +112,40 @@
                     </div>
 
                     <div class="wrap__project-details">
-                        <div class="wrap__experience">
-                            <div class="wrap__project-images order-2 order-lg-1">
-                                <img class="project-logo mx-auto" data-type="icon"
-                                    src="./assets/img/projects/logo-antf.png" alt="project logo">
-                                <img src="./assets/img/projects/antf-1.png" alt="project image">
-                                <img src="./assets/img/projects/antf-2.png" alt="project image">
-                                <img src="./assets/img/projects/antf-3.png" alt="project image">
-                            </div>
+
+
+
+                        <div class="wrap__experience" data-orientation="vertical">
                             <div class="wrap__details order-1 order-lg-2">
 
                                 <div class="wrap">
                                     <h2>AntFactory</h2>
-                                    <label for="single__project" class="project__field">Web Design</label>
+                                    <div class="wrap">
+                                        <label for="single__project" class="project__field">Web Design</label>
+                                        <label for="single__project" class="project__field">Graphic Design</label>
+                                    </div>
+
+                                </div>
+                                <div class="wrap">
+                                    <img class="image__mock-up" src="assets/img/card-antf.png" alt="mock-up project">
+                                </div>
+                                <div class="wrap">
+                                    <div id="splideProject" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/antf-1.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/antf-2.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/antf-3.png" alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="wrap">
                                     <h3>Description</h3>
@@ -139,86 +162,97 @@
                                         solutions that help businesses stand out in competitive markets.
                                     </p>
                                 </div>
-                                <div class="wrap">
-                                    <h3>My role in the project</h3>
-                                    <p>I was responsible for creating AntFactory’s <b>website</b> from the ground up,
-                                        designing
-                                        it to reflect the carefully crafted
-                                        <b>brand identity</b> developed for the agency. The website was enriched with
-                                        engaging
-                                        content and innovative visual animations
-                                        to make it both <b>informative</b> and <b>interactive</b>, offering an immersive
-                                        experience
-                                        for users. I also developed the partner
-                                        <b>portfolio</b>, highlighting the agency’s collaborations and achievements, and
-                                        actively participated in the product
-                                        <b>photoshoot</b> to ensure high-quality visuals aligned with the brand’s image.
-                                        The
-                                        result was a dynamic and polished platform
-                                        that effectively showcases AntFactory’s expertise and services.
-                                    </p>
-                                </div>
-
-                                <div class="wrap">
-                                    <h3>Tools and methods</h3>
-                                    <div class="wrap" data-orientation="horizontal">
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#webflow">
-                                            </svg>
-                                            <p class="small">Webflow</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#html">
-                                            </svg>
-                                            <p class="small">HTML 5</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#css">
-                                            </svg>
-                                            <p class="small">CSS 3</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#js">
-                                            </svg>
-                                            <p class="small">JavaScript</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#figma">
-                                            </svg>
-                                            <p class="small">Figma</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#ps">
-                                            </svg>
-                                            <p class="small">Photoshop</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#ai">
-                                            </svg>
-                                            <p class="small">Illustrator</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#ae">
-                                            </svg>
-                                            <p class="small">After Effects</p>
+                                <div class="wrap__experience">
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>My role in the project</h3>
+                                            <p>I was responsible for creating AntFactory’s <b>website</b> from the
+                                                ground up,
+                                                designing
+                                                it to reflect the carefully crafted
+                                                <b>brand identity</b> developed for the agency. The website was enriched
+                                                with
+                                                engaging
+                                                content and innovative visual animations
+                                                to make it both <b>informative</b> and <b>interactive</b>, offering an
+                                                immersive
+                                                experience
+                                                for users. I also developed the partner
+                                                <b>portfolio</b>, highlighting the agency’s collaborations and
+                                                achievements, and
+                                                actively participated in the product
+                                                <b>photoshoot</b> to ensure high-quality visuals aligned with the
+                                                brand’s image.
+                                                The
+                                                result was a dynamic and polished platform
+                                                that effectively showcases AntFactory’s expertise and services.
+                                            </p>
                                         </div>
                                     </div>
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>Tools and methods</h3>
+                                            <div class="wrap" data-orientation="horizontal">
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#webflow">
+                                                    </svg>
+                                                    <p class="small">Webflow</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#html">
+                                                    </svg>
+                                                    <p class="small">HTML 5</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#css">
+                                                    </svg>
+                                                    <p class="small">CSS 3</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#js">
+                                                    </svg>
+                                                    <p class="small">JavaScript</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#figma">
+                                                    </svg>
+                                                    <p class="small">Figma</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#ps">
+                                                    </svg>
+                                                    <p class="small">Photoshop</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#ai">
+                                                    </svg>
+                                                    <p class="small">Illustrator</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#ae">
+                                                    </svg>
+                                                    <p class="small">After Effects</p>
+                                                </div>
+                                            </div>
 
+                                        </div>
+                                        <div class="wrap w-100 align-items-center align-items-lg-start">
+                                            <a href="https://www.antfactory.it/" class="btn__custom" target="_blank">
+                                                <i class="bi bi-link-45deg"></i>
+                                                Link to project
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="wrap w-100 align-items-center align-items-lg-start">
-                                    <a href="https://www.antfactory.it/" class="btn__custom" target="_blank">
-                                        <i class="bi bi-link-45deg"></i>
-                                        Link to project
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
 
@@ -265,7 +299,33 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProject', {
+                type: 'loop',
+                perPage: 2,
+                perMove: 1,
+                gap: '2rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProject .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
 
 
 </body>

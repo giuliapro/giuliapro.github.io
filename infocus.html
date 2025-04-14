@@ -30,6 +30,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- my css -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,14 +111,11 @@
                         </div>
                     </div>
 
-                    <div class="wrap__project-details">
-                        <div class="wrap__experience">
-                            <div class="wrap__project-images order-2 order-lg-1">
-                                <img class="project-logo mx-auto" data-type="icon"
-                                    src="./assets/img/projects/logo-infocus.png" alt="project logo">
-                                <img class="mx-auto" src="./assets/img/projects/infocus.png" alt="project image">
+                    <!--  -->
 
-                            </div>
+                    <div class="wrap__project-details">
+                        <div class="wrap__experience" data-orientation="vertical">
+
                             <div class="wrap__details order-1 order-lg-2">
 
                                 <div class="wrap">
@@ -128,6 +127,58 @@
 
                                 </div>
                                 <div class="wrap">
+                                    <img class="image__mock-up" src="assets/img/card-infocus.png" alt="mock-up project">
+                                </div>
+                                <div class="wrap">
+                                    <div id="splideProjectApp" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Landing page.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Login.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Task Manager.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Create a task.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Edit task (POST DELETE).png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Edit task.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Imposta timer.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/INCR.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Pause going.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/infocus/Timer going.png"
+                                                        alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrap">
                                     <h3>Description</h3>
                                     <p><b>InFocus</b> is a mobile app designed to help students track and optimize their
                                         study time. The app allows users to track time spent on various tasks and
@@ -136,49 +187,60 @@
                                         increase study efficiency.
                                     </p>
                                 </div>
-                                <div class="wrap">
-                                    <h3>My role in the project</h3>
-                                    <p>In this university project, my colleagues and I worked on defining the <b>design
-                                            system</b>, establishing the visual and
-                                        functional guidelines of the app. We developed <b>layouts</b> and
-                                        <b>mock-ups</b> to represent the user interface, and created
-                                        <b>prototypes</b> to test and refine the navigation flow. Furthermore, we
-                                        conducted a preliminary <b>questionnaire</b> to understand
-                                        user needs and subsequently carried out <b>user tests</b> to collect feedback
-                                        and improve the overall user experience.
-                                    </p>
-                                </div>
-
-                                <div class="wrap">
-                                    <h3>Tools and methods</h3>
-                                    <div class="wrap" data-orientation="horizontal">
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#sketch">
-                                            </svg>
-                                            <p class="small">Sketch</p>
+                                <div class="wrap__experience">
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>My role in the project</h3>
+                                            <p>In this university project, my colleagues and I worked on defining the
+                                                <b>design
+                                                    system</b>, establishing the visual and
+                                                functional guidelines of the app. We developed <b>layouts</b> and
+                                                <b>mock-ups</b> to represent the user interface, and created
+                                                <b>prototypes</b> to test and refine the navigation flow. Furthermore,
+                                                we
+                                                conducted a preliminary <b>questionnaire</b> to understand
+                                                user needs and subsequently carried out <b>user tests</b> to collect
+                                                feedback
+                                                and improve the overall user experience.
+                                            </p>
                                         </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#figma">
-                                            </svg>
-                                            <p class="small">Figma</p>
+
+                                    </div>
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>Tools and methods</h3>
+                                            <div class="wrap" data-orientation="horizontal">
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#sketch">
+                                                    </svg>
+                                                    <p class="small">Sketch</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#figma">
+                                                    </svg>
+                                                    <p class="small">Figma</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="wrap w-100 align-items-center align-items-lg-start">
+                                            <a href="https://www.figma.com/design/en85dgBJVNpJz1asV26hQj/cv?node-id=673-9479&t=DxNpNAHlaDaZWaGO-1"
+                                                class="btn__custom" target="_blank">
+                                                <i class="bi bi-link-45deg"></i>
+                                                Link to project
+                                            </a>
                                         </div>
                                     </div>
+                                </div>
 
-                                </div>
-                                <div class="wrap w-100 align-items-center align-items-lg-start">
-                                    <a href="https://www.figma.com/design/en85dgBJVNpJz1asV26hQj/cv?node-id=673-9479&t=DxNpNAHlaDaZWaGO-1"
-                                        class="btn__custom" target="_blank">
-                                        <i class="bi bi-link-45deg"></i>
-                                        Link to project
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
 
                     </div>
+
 
 
 
@@ -220,7 +282,39 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProjectApp', {
+                type: 'loop',
+                perPage: 4,
+                perMove: 1,
+                gap: '1rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 3,
+                    },
+                    768: {
+                        perPage: 2,
+                    },
+                    568: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProjectApp .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
 
 
 </body>

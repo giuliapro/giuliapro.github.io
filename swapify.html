@@ -30,6 +30,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- my css -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,15 +111,11 @@
                         </div>
                     </div>
 
+                    <!--  -->
+
                     <div class="wrap__project-details">
-                        <div class="wrap__experience">
-                            <div class="wrap__project-images order-2 order-lg-1">
-                                <img class="project-logo mx-auto" data-type="text"
-                                    src="./assets/img/projects/logo-swapify.svg" alt="project logo">
-                                <img src="./assets/img/projects/swapify-1.png" alt="project image">
-                                <img src="./assets/img/projects/swapify-2.png" alt="project image">
-                                <img src="./assets/img/projects/swapify-3.png" alt="project image">
-                            </div>
+                        <div class="wrap__experience" data-orientation="vertical">
+
                             <div class="wrap__details order-1 order-lg-2">
 
                                 <div class="wrap">
@@ -128,7 +126,85 @@
                                         <label for="single__project" class="project__field">Front-end</label>
                                         <label for="single__project" class="project__field">Back-end</label>
                                     </div>
+                                </div>
 
+                                <div class="wrap">
+                                    <img class="image__mock-up" src="assets/img/card-swapify.png" alt="mock-up project">
+                                </div>
+                                <div class="wrap">
+                                    <div id="splideProject" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/swapify-1.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/swapify-2.png" alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/swapify-3.png" alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrap">
+                                    <div id="splideProjectApp" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Login.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Home.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Search - Lista.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Search - Mappa.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Evento  swap-jeand - non seguire più.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Evento  swap-jeand - segui.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Guide 2.0.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Profilo_Oganizzatore Eventi.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/profilo.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/i-miei-biglietti.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/i-miei-gettoni.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/app/swapify/Recensione estesa.png"
+                                                        alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="wrap">
                                     <h3>Description</h3>
@@ -139,80 +215,93 @@
                                         resources, improve consumer awareness and promote a more sustainable lifestyle.
                                     </p>
                                 </div>
-                                <div class="wrap">
-                                    <h3>My role in the project</h3>
-                                    <p>The idea of Swapify was born for a university project, where I collaborated with
-                                        three other teammates to design the
-                                        <b>app’s interface</b> and the main flow of <b>user experience</b>. During this
-                                        phase, we created a complete <b>design system</b>, developed
-                                        layouts, <b>mock-ups</b> and <b>prototypes</b>, and conducted
-                                        <b>questionnaires</b> and three full cycles of <b>user tests</b> to ensure an
-                                        intuitive and functional user interface.
-                                    </p>
-                                </div>
-                                <div class="wrap">
-                                    <h3>Additional work: Web application</h3>
-                                    <p>After that, I continued the project on my own, turning Swapify into a full <b>web
-                                            application</b>. I adapted the design for desktop view and then i started
-                                        programming. I took care of both the
-                                        <b>front-end</b>, using <b>React</b> to create a reactive and dynamic interface,
-                                        and the <b>back-end</b>, implementing the logic and data
-                                        management with <b>Node.js</b> and <b>MongoDB</b>. This allowed us to offer a
-                                        smooth user experience and effectively manage
-                                        information about swap party events.
+                                <div class="wrap__experience">
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>My role in the project</h3>
+                                            <p>The idea of Swapify was born for a university project, where I
+                                                collaborated with
+                                                three other teammates to design the
+                                                <b>app’s interface</b> and the main flow of <b>user experience</b>.
+                                                During this
+                                                phase, we created a complete <b>design system</b>, developed
+                                                layouts, <b>mock-ups</b> and <b>prototypes</b>, and conducted
+                                                <b>questionnaires</b> and three full cycles of <b>user tests</b> to
+                                                ensure an
+                                                intuitive and functional user interface.
+                                            </p>
+                                        </div>
+                                        <div class="wrap">
+                                            <h3>Additional work: Web application</h3>
+                                            <p>After that, I continued the project on my own, turning Swapify into a
+                                                full <b>web
+                                                    application</b>. I adapted the design for desktop view and then i
+                                                started
+                                                programming. I took care of both the
+                                                <b>front-end</b>, using <b>React</b> to create a reactive and dynamic
+                                                interface,
+                                                and the <b>back-end</b>, implementing the logic and data
+                                                management with <b>Node.js</b> and <b>MongoDB</b>. This allowed us to
+                                                offer a
+                                                smooth user experience and effectively manage
+                                                information about swap party events.
 
-                                    </p>
-                                </div>
+                                            </p>
+                                        </div>
 
-                                <div class="wrap">
-                                    <h3>Tools and methods</h3>
-                                    <div class="wrap" data-orientation="horizontal">
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark stroke icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#figma">
-                                            </svg>
-                                            <p class="small">Figma</p>
+                                    </div>
+                                    <div class="wrap__details">
+                                        <div class="wrap">
+                                            <h3>Tools and methods</h3>
+                                            <div class="wrap" data-orientation="horizontal">
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark stroke icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#figma">
+                                                    </svg>
+                                                    <p class="small">Figma</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#react">
+                                                    </svg>
+                                                    <p class="small">React</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#mongo">
+                                                    </svg>
+                                                    <p class="small">MongoDB</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#node">
+                                                    </svg>
+                                                    <p class="small">Node.js</p>
+                                                </div>
+                                                <div class="wrap__icon-text">
+                                                    <svg class="icon-dark fill icon-m icon-nav">
+                                                        <use href="./assets/img/icons.svg#bootstrap">
+                                                    </svg>
+                                                    <p class="small">Bootstrap</p>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#react">
-                                            </svg>
-                                            <p class="small">React</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#mongo">
-                                            </svg>
-                                            <p class="small">MongoDB</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#node">
-                                            </svg>
-                                            <p class="small">Node.js</p>
-                                        </div>
-                                        <div class="wrap__icon-text">
-                                            <svg class="icon-dark fill icon-m icon-nav">
-                                                <use href="./assets/img/icons.svg#bootstrap">
-                                            </svg>
-                                            <p class="small">Bootstrap</p>
+                                        <div class="wrap w-100 align-items-center align-items-lg-start">
+                                            <a href="https://github.com/giuliapro/Digitazon-progettofinale"
+                                                class="btn__custom" target="_blank">
+                                                <i class="bi bi-link-45deg"></i>
+                                                Link to project
+                                            </a>
                                         </div>
                                     </div>
+                                </div>
 
-                                </div>
-                                <div class="wrap w-100 align-items-center align-items-lg-start">
-                                    <a href="https://github.com/giuliapro/Digitazon-progettofinale" class="btn__custom"
-                                        target="_blank">
-                                        <i class="bi bi-link-45deg"></i>
-                                        Link to project
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
 
                     </div>
-
 
 
                 </section>
@@ -253,7 +342,62 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProject', {
+                type: 'loop',
+                perPage: 2,
+                perMove: 1,
+                gap: '2rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProject .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProjectApp', {
+                type: 'loop',
+                perPage: 4,
+                perMove: 1,
+                gap: '1rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 3,
+                    },
+                    768: {
+                        perPage: 2,
+                    },
+                    568: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProjectApp .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
 
 
 </body>

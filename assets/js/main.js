@@ -166,8 +166,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // All'apertura pagina
-    window.addEventListener('load', () => {
+    // sistema il loader bloccato con la freccia indietro del browser
+    window.addEventListener('pageshow', () => {
         loader.classList.remove('visible');
     });
+
+    // Fallback contro errori
+    setTimeout(() => loader.classList.remove('visible'), 3000);
+
 
 });
