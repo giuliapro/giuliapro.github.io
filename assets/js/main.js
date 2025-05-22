@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // fade-in nero
+    window.addEventListener("load", function () {
+        const overlay = document.getElementById("black-overlay");
+        overlay.style.opacity = "0";
+
+        // Rimuovi l'elemento dopo il fade
+        setTimeout(() => {
+            overlay.remove();
+        }, 2000); // deve combaciare con la durata del transition
+    });
+
 
     // display select index
 
@@ -59,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
+
+
 
 
 
