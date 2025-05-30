@@ -813,41 +813,7 @@
             });
         });
     </script>
-    <!-- animazione linee -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const lines = document.querySelectorAll(".wrap__line .line");
 
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        const line = entry.target.querySelector(".line");
-
-                        if (entry.isIntersecting) {
-                            // Calcola la percentuale visibile
-                            const ratio = entry.intersectionRatio;
-
-                            // Calcola la lunghezza massima (puoi regolarla a piacere!)
-                            const maxHeight = entry.target.offsetHeight;
-
-                            // Imposta l'altezza in base alla percentuale
-                            line.style.height = `${maxHeight * ratio}px`;
-                        } else {
-                            // Se non è visibile, riduci la linea a 0
-                            line.style.height = "0";
-                        }
-                    });
-                },
-                {
-                    threshold: Array.from({ length: 101 }, (_, i) => i / 100), // soglie da 0 a 1
-                }
-            );
-
-            document.querySelectorAll(".wrap__line").forEach((line) => {
-                observer.observe(line);
-            });
-        });
-    </script>
 </body>
 
 </html>
