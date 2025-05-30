@@ -3838,6 +3838,153 @@ nav.navbar {
 
 /* #region About */
 
+/* new landing */
+
+.wrap__grid-landing {
+    display: flex;
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto; */
+    gap: 1rem;
+    height: 50vh;
+}
+
+/* Layout responsive: da tablet in poi (es. max-width 768px) */
+@media (max-width: 768px) {
+    .wrap__grid-landing {
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+        width: 100%;
+    }
+}
+
+.wrap__left-heading {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-content: end;
+    flex-wrap: wrap;
+}
+
+.wrap__left-heading>img {
+    align-self: flex-start;
+    flex: 0 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.wrap__stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+@media screen and (max-width:768px) {
+    .wrap__stars {
+        top: unset;
+        bottom: 0;
+    }
+}
+
+.wrap__stars .stars1 {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+}
+
+.wrap__stars .stars2 {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 60px;
+    transform: scaleX(-1);
+}
+
+.wrap__stars .stars3 {
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+    transform: scaleX(-1);
+    width: 60px;
+}
+
+/* Animazione combinata: brillio e ingrandimento */
+@keyframes shine-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: brightness(1.4);
+        transform: scale(1.2);
+    }
+}
+
+/* Applicazione dell'animazione a tutte le stelle */
+.wrap__stars img {
+    animation: shine-pulse 3s infinite ease-in-out;
+}
+
+/* Sfalsamento dei tempi di partenza */
+.wrap__stars .stars1 {
+    animation-delay: 0s;
+}
+
+.wrap__stars .stars2 {
+    animation-delay: 1.5s;
+}
+
+.wrap__stars .stars3 {
+    animation-delay: 0.75s;
+}
+
+@media (max-width: 768px) {
+    .wrap__left-heading {
+        display: flex;
+        flex-direction: column-reverse;
+        align-content: center;
+    }
+
+    .wrap__left-heading>img {
+        max-width: 300px;
+        margin: auto;
+        align-self: unset;
+        position: absolute;
+        bottom: -20vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+h1.jumbo__text {
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: clamp(4rem, 7vw, 7rem);
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    h1.jumbo__text {
+        font-size: clamp(3.5rem, 12vw, 6.5rem);
+        line-height: clamp(3.5rem, 12vw, 6.5rem);
+        position: static;
+        width: auto;
+        height: 40vh;
+    }
+}
+
+/*  */
+
 .main__section {
     display: flex;
     justify-content: center;
@@ -3856,13 +4003,14 @@ nav.navbar {
     padding-block: clamp(1rem, 10vw, 2rem);
     padding-inline: clamp(1rem, 5vw, 3rem);
     width: 100%;
+    position: relative;
 }
 
 .wrap__intro {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    padding: 0 3rem;
+    padding: 0 0;
     align-items: center;
     margin: auto;
 }
@@ -3934,7 +4082,8 @@ nav.navbar {
 
 .wrap__contact-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .wrap__icons {
@@ -3981,11 +4130,11 @@ nav.navbar {
         align-self: center;
     }
 
-    .wrap__contact-links {
+    /* .wrap__contact-links {
         flex-direction: column-reverse;
         align-items: center;
         gap: 1rem;
-    }
+    } */
 }
 
 .wrap__section {
@@ -4308,6 +4457,7 @@ span.flag img {
 
 /* single project */
 
+
 .wrap__section-header-project {
     width: 100%;
 }
@@ -4475,7 +4625,6 @@ span.flag img {
     animation: fadeInUp 0.75s ease-out forwards;
 }
 
-/* Delay per ogni immagine */
 .grid__project-content img:nth-child(1) {
     animation-delay: 0s;
 }
@@ -4500,12 +4649,40 @@ span.flag img {
     }
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
     .grid__project-content {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* new grid reels */
+
+.grid__reels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .grid__reels {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wrap-reels-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap-reels-content iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 9/16;
+}
+
 
 
 /* #endregion */
