@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // scroll animation
+    // scroll animation fade-in
 
     const faders = document.querySelectorAll('.fade-in');
 
@@ -69,6 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
+    });
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+
+        const rect = fader.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            fader.classList.add('visible');
+        }
     });
 
 

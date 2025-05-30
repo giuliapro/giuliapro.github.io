@@ -3973,6 +3973,16 @@ h1.jumbo__text {
     pointer-events: none;
 }
 
+@media screen and (max-width:1200px) {
+    .wrap__left-heading {
+        justify-content: center;
+    }
+
+    h1.jumbo__text {
+        width: auto;
+    }
+}
+
 @media (max-width: 768px) {
     h1.jumbo__text {
         font-size: clamp(3.5rem, 12vw, 6.5rem);
@@ -4130,11 +4140,9 @@ h1.jumbo__text {
         align-self: center;
     }
 
-    /* .wrap__contact-links {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 1rem;
-    } */
+    .wrap__contact-links {
+        justify-content: space-between;
+    }
 }
 
 .wrap__section {
@@ -4421,6 +4429,9 @@ span.flag img {
     height: 100%;
     position: absolute;
 }
+
+
+
 
 /* hobbies */
 

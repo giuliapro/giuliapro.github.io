@@ -216,6 +216,50 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="wrap">
+                                    <div id="splideProject2" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-1.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-2.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-3.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-4.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-5.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-6.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-7.png"
+                                                        alt="project image">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="./assets/img/projects/gamondi-brandbook-8.png"
+                                                        alt="project image">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <div class="wrap">
                                     <h3>Description</h3>
                                     <p><b>Gamondi</b> is a historic Italian brand specializing in premium vermouth,
@@ -388,6 +432,30 @@
             }).mount();
 
             $('#splideProject .splide__slide img').css({
+                'border-radius': '1rem'
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#splideProject2', {
+                type: 'loop',
+                perPage: 1,
+                perMove: 1,
+                gap: '2rem',
+                rewind: true,
+                autoScroll: {
+                    speed: 2,
+                },
+                breakpoints: {
+                    991: {
+                        perPage: 1,
+                    },
+                },
+            }).mount();
+
+            $('#splideProject2 .splide__slide img').css({
                 'border-radius': '1rem'
             });
         });
