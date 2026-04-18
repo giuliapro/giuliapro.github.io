@@ -4650,6 +4650,10 @@ span.flag img {
     animation: fadeInUp 0.75s ease-out forwards;
 }
 
+.grid__project-content.vertical img {
+    aspect-ratio: 4/5;
+}
+
 .grid__project-content.two-col img {
     aspect-ratio: unset;
 }
