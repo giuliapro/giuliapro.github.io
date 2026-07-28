@@ -4365,6 +4365,10 @@ h1.jumbo__text {
             "contacts languages";
     }
 
+    .wrap__profile-pic.about__computer {
+        max-width: 320px;
+    }
+
 }
 
 .wrap__info-text .single__experience {
