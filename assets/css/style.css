@@ -4502,9 +4502,19 @@ span.flag img {
     position: absolute;
 }
 
-.education__explorer {
+.education__characters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: clamp(1rem, 4vw, 4rem);
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.education__character {
     display: block;
-    width: min(100%, 360px);
+    width: 100%;
+    max-width: 360px;
     height: auto;
     margin: 0 auto;
 }
@@ -4537,8 +4547,13 @@ span.flag img {
 }
 
 @media screen and (max-width:768px) {
-    .education__explorer {
-        width: min(75vw, 320px);
+    .education__characters {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.25rem, 2vw, 1rem);
+    }
+
+    .education__character {
+        width: 100%;
     }
 
     .hobby__intro {
@@ -4549,6 +4564,17 @@ span.flag img {
     .hobby__drawing {
         width: min(70vw, 240px);
         flex-basis: auto;
+    }
+}
+
+@media screen and (max-width:568px) {
+    .education__characters {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .education__character {
+        width: min(75vw, 300px);
     }
 }
 

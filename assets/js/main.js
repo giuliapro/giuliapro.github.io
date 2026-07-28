@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // scroll animation fade-in
 
+    document.querySelectorAll('img[src*="/char-"]').forEach(character => {
+        character.classList.add('fade-in');
+    });
+
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
