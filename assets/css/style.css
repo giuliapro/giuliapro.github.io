@@ -4188,18 +4188,12 @@ h1.jumbo__text {
 
 .uni-projects__intro {
     width: 100%;
-    margin-top: clamp(3rem, 7vw, 6rem);
-    padding-top: clamp(1.5rem, 3vw, 2.5rem);
-    border-top: 3px dotted var(--brown-600);
-}
-
-.uni-projects__intro h2 {
-    color: var(--brown-600);
-    margin-bottom: 0.75rem;
+    margin-top: clamp(5rem, 10vw, 9rem);
 }
 
 .uni-projects__intro p {
     max-width: 850px;
+    margin-top: clamp(1.5rem, 3vw, 2rem);
 }
 
 .wrap__projects[data-layout="uni-projects"] {
