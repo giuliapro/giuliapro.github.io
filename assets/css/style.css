@@ -4192,7 +4192,8 @@ h1.jumbo__text {
 }
 
 .uni-projects__intro p {
-    max-width: 850px;
+    width: 100%;
+    max-width: none;
     margin-top: clamp(1.5rem, 3vw, 2rem);
 }
 
