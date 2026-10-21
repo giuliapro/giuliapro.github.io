@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('click', function (event) {
-        if (!navNavbar.contains(event.target)) {
+        if (navNavbar && !navNavbar.contains(event.target)) {
             navToggle.classList.remove('active');
             navNavigation.classList.remove('show');
             navNavItems.classList.remove('show');
@@ -45,6 +45,75 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
+    // scroll progress bar + navbar state (modern layer, pages with a navbar only)
+
+    if (navNavbar) {
+        const progress = document.createElement('div');
+        progress.id = 'scroll-progress';
+        document.body.prepend(progress);
+
+        let ticking = false;
+        const updateScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.setProperty('--progress', max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+            navNavbar.classList.toggle('is-scrolled', window.scrollY > 20);
+            ticking = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(updateScroll);
+            }
+        }, { passive: true });
+        updateScroll();
+
+        // back-to-top button
+        const toTop = document.createElement('button');
+        toTop.id = 'to-top';
+        toTop.setAttribute('aria-label', 'Back to top');
+        toTop.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.body.append(toTop);
+        window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), { passive: true });
+
+        // little stars burst out of every click
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.addEventListener('click', e => {
+                for (let i = 0; i < 6; i++) {
+                    const spark = document.createElement('img');
+                    const angle = (Math.PI * 2 * i) / 6 + Math.random() * 0.6;
+                    const dist = 28 + Math.random() * 30;
+                    spark.src = 'assets/img/stars.png';
+                    spark.alt = '';
+                    spark.className = 'click-spark';
+                    spark.style.left = e.clientX + 'px';
+                    spark.style.top = e.clientY + 'px';
+                    spark.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+                    spark.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+                    document.body.append(spark);
+                    setTimeout(() => spark.remove(), 800);
+                }
+            });
+        }
+
+        // spotlight that follows the cursor on project cards
+        document.querySelectorAll('.single__project').forEach(card => {
+            card.addEventListener('pointermove', e => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+                card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+            });
+        });
+
+        // index of each tool tile, used to stagger its entrance and idle bob
+        document.querySelectorAll('.wrap__icons.about .icon-s').forEach((icon, i) => icon.style.setProperty('--n', i));
+
+        // elements that reveal on scroll, in addition to the sections already marked .fade-in
+        document.querySelectorAll(
+            '.single__project, .single__experience, .wrap__single-education, .drawing, .grid__project-content img'
+        ).forEach(el => el.classList.add('fade-in'));
+    }
 
     // scroll animation fade-in
 
@@ -59,13 +128,23 @@ document.addEventListener('DOMContentLoaded', function () {
         rootMargin: "0px 0px -50px 0px" // Add margin at the bottom
     };
 
+    // once the entrance is over, drop the stagger delay so hover motion is instant
+    const markRevealed = el => setTimeout(() => {
+        el.style.transitionDelay = '';
+        el.classList.add('revealed');
+    }, 1100);
+
     const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+        let order = 0;
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
                 return;
             } else {
-                entry.target.classList.add('visible');
-                appearOnScroll.unobserve(entry.target);
+                const el = entry.target;
+                el.style.transitionDelay = Math.min(order++, 6) * 80 + 'ms';
+                el.classList.add('visible');
+                appearOnScroll.unobserve(el);
+                markRevealed(el);
             }
         });
     }, appearOptions);
@@ -80,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const rect = fader.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
             fader.classList.add('visible');
+            markRevealed(fader);
         }
     });
 
@@ -97,9 +177,15 @@ document.addEventListener('DOMContentLoaded', function () {
             buttonsFilter.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const target = button.getAttribute('data-target');
+            let shown = 0;
             projects.forEach(project => {
                 if (target === 'all' || project.getAttribute('data-target').includes(target)) {
                     project.style.display = 'flex';
+                    // restart the entrance animation, staggered
+                    project.classList.remove('filter-in');
+                    void project.offsetWidth;
+                    project.style.setProperty('--i', shown++);
+                    project.classList.add('filter-in');
                 } else {
                     project.style.display = 'none';
                 }
