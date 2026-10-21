@@ -560,12 +560,127 @@
 
                 </section>
                 <section class="wrap__section fade-in">
-                    <div class="education__characters" aria-label="Giulia's illustrated characters">
-                        <img class="education__character fade-in" src="./assets/img/char-flowers.png"
-                            alt="Giulia holding flowers">
-                        <img class="education__character education__explorer fade-in"
-                            src="./assets/img/char-eploring.png" alt="Giulia exploring the world">
-                        <img class="education__character fade-in" src="./assets/img/char-wink.png" alt="Giulia winking">
+                    <!-- Animal Crossing style nature scene (pure HTML/CSS/SVG), characters stand inside it -->
+                    <div class="nature-scene">
+                        <svg class="sc-symbols" width="0" height="0" aria-hidden="true" focusable="false">
+                            <defs>
+                                <linearGradient id="sc-stump-g" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#D49A5E" />
+                                    <stop offset="1" stop-color="#A9703F" />
+                                </linearGradient>
+                            </defs>
+                            <symbol id="sc-pine" viewBox="0 0 100 170">
+                                <rect x="43" y="140" width="14" height="28" rx="3" fill="#B07A4C" />
+                                <polygon points="50,52 98,148 2,148" fill="#2E9A6E" />
+                                <polygon points="50,52 2,148 50,148" fill="#3FB383" opacity=".55" />
+                                <polygon points="50,28 90,106 10,106" fill="#35AA7B" />
+                                <polygon points="50,28 10,106 50,106" fill="#4CC595" opacity=".55" />
+                                <polygon points="50,4 80,64 20,64" fill="#3DBA88" />
+                                <polygon points="50,4 20,64 50,64" fill="#5ED3A2" opacity=".55" />
+                            </symbol>
+                            <symbol id="sc-cherry" viewBox="0 0 160 190">
+                                <path d="M66,190 C70,160 74,140 72,116 L90,116 C88,140 90,162 100,190 Z" fill="#A9744A" />
+                                <g fill="#F59FB6">
+                                    <circle cx="80" cy="108" r="40" />
+                                    <circle cx="50" cy="90" r="32" />
+                                    <circle cx="112" cy="90" r="32" />
+                                </g>
+                                <g fill="#F9B9C9">
+                                    <circle cx="80" cy="58" r="46" />
+                                    <circle cx="44" cy="78" r="34" />
+                                    <circle cx="118" cy="78" r="34" />
+                                    <circle cx="80" cy="92" r="36" />
+                                </g>
+                                <g fill="#FFFFFF" opacity=".85">
+                                    <circle cx="62" cy="48" r="5" /><circle cx="96" cy="40" r="4" /><circle cx="38" cy="76" r="5" />
+                                    <circle cx="82" cy="72" r="5" /><circle cx="120" cy="70" r="5" /><circle cx="64" cy="100" r="4" />
+                                    <circle cx="104" cy="98" r="4" />
+                                </g>
+                                <g fill="#EE7F9E">
+                                    <circle cx="72" cy="30" r="3" /><circle cx="52" cy="62" r="3" /><circle cx="100" cy="60" r="3" />
+                                    <circle cx="130" cy="86" r="3" /><circle cx="90" cy="108" r="3" /><circle cx="56" cy="92" r="3" />
+                                </g>
+                            </symbol>
+                            <symbol id="sc-flower" viewBox="0 0 24 40">
+                                <path d="M12,38 C12,30 12,26 12,18" stroke="#4E9E4B" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                                <path d="M12,31 C6,29 4,25 4,25 C9,24 12,28 12,31Z" fill="#5DB85A" />
+                                <g fill="currentColor">
+                                    <circle cx="12" cy="6" r="4.4" /><circle cx="17.7" cy="10.1" r="4.4" /><circle cx="15.5" cy="16.9" r="4.4" />
+                                    <circle cx="8.5" cy="16.9" r="4.4" /><circle cx="6.3" cy="10.1" r="4.4" />
+                                </g>
+                                <circle cx="12" cy="12" r="3.2" fill="#FFE27A" />
+                            </symbol>
+                            <symbol id="sc-stump" viewBox="0 0 160 110">
+                                <path d="M18,102 C30,96 34,88 33,70 L33,40 L127,40 L127,70 C126,88 130,96 144,102 C120,108 100,106 80,106 C60,106 40,108 18,102Z" fill="url(#sc-stump-g)" />
+                                <ellipse cx="80" cy="40" rx="48" ry="16" fill="#E8C48E" />
+                                <ellipse cx="80" cy="40" rx="36" ry="11" fill="none" stroke="#C99A5E" stroke-width="2" />
+                                <ellipse cx="80" cy="40" rx="22" ry="6.5" fill="none" stroke="#C99A5E" stroke-width="2" />
+                                <ellipse cx="80" cy="40" rx="8" ry="2.5" fill="none" stroke="#C99A5E" stroke-width="2" />
+                            </symbol>
+                            <symbol id="sc-bush" viewBox="0 0 120 70">
+                                <rect x="6" y="48" width="108" height="20" rx="10" fill="#4FB65A" />
+                                <circle cx="30" cy="44" r="24" fill="#4FB65A" />
+                                <circle cx="60" cy="34" r="30" fill="#58C063" />
+                                <circle cx="92" cy="44" r="26" fill="#4FB65A" />
+                                <circle cx="52" cy="26" r="13" fill="#76D47A" opacity=".8" />
+                            </symbol>
+                            <symbol id="sc-cloud" viewBox="0 0 220 90">
+                                <g fill="#fff">
+                                    <circle cx="60" cy="58" r="30" /><circle cx="100" cy="44" r="38" />
+                                    <circle cx="146" cy="52" r="32" /><circle cx="182" cy="62" r="24" />
+                                    <rect x="36" y="60" width="170" height="28" rx="14" />
+                                </g>
+                            </symbol>
+                            <symbol id="sc-butterfly" viewBox="0 0 30 24">
+                                <path d="M15,12 C8,0 0,4 3,12 C0,20 9,24 15,12Z" fill="#FFB347" />
+                                <path d="M15,12 C22,0 30,4 27,12 C30,20 21,24 15,12Z" fill="#FF9F2E" />
+                                <rect x="14" y="6" width="2" height="12" rx="1" fill="#6B4A2B" />
+                            </symbol>
+                        </svg>
+
+                        <div class="sc-hill sc-hill--far"></div>
+                        <div class="sc-hill sc-hill--near"></div>
+
+                        <svg class="sc-cloud sc-cloud--1" aria-hidden="true" viewBox="0 0 220 90"><use href="#sc-cloud" /></svg>
+                        <svg class="sc-cloud sc-cloud--2" aria-hidden="true" viewBox="0 0 220 90"><use href="#sc-cloud" /></svg>
+                        <svg class="sc-cloud sc-cloud--3" aria-hidden="true" viewBox="0 0 220 90"><use href="#sc-cloud" /></svg>
+
+                        <svg class="sc-deco sc-pine sc-pine--1 sc-sway" aria-hidden="true" viewBox="0 0 100 170"><use href="#sc-pine" /></svg>
+                        <svg class="sc-deco sc-pine sc-pine--2 sc-sway" aria-hidden="true" viewBox="0 0 100 170"><use href="#sc-pine" /></svg>
+                        <svg class="sc-deco sc-cherry sc-sway" aria-hidden="true" viewBox="0 0 160 190"><use href="#sc-cherry" /></svg>
+                        <svg class="sc-deco sc-bush sc-bush--1" aria-hidden="true" viewBox="0 0 120 70"><use href="#sc-bush" /></svg>
+                        <svg class="sc-deco sc-bush sc-bush--2" aria-hidden="true" viewBox="0 0 120 70"><use href="#sc-bush" /></svg>
+
+                        <div class="sc-ground"></div>
+                        <svg class="sc-brick" aria-hidden="true" viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <defs>
+                                <pattern id="sc-brick-p" width="48" height="24" patternUnits="userSpaceOnUse">
+                                    <rect width="48" height="24" fill="#EDA77F" />
+                                    <path d="M0 .75H48M0 12.75H48M0 .75V12M24 12.75V24" stroke="#D98E66" stroke-width="1.5" fill="none" />
+                                </pattern>
+                            </defs>
+                            <path d="M0,80 C260,40 560,70 860,52 C1020,42 1120,28 1200,10 L1200,110 C1060,140 880,160 640,150 C380,138 180,170 0,150 Z" fill="url(#sc-brick-p)" />
+                        </svg>
+
+                        <svg class="sc-deco sc-flower sc-flower--1 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                        <svg class="sc-deco sc-flower sc-flower--2 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                        <svg class="sc-deco sc-flower sc-flower--3 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                        <svg class="sc-deco sc-flower sc-flower--4 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                        <svg class="sc-deco sc-flower sc-flower--5 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                        <svg class="sc-deco sc-flower sc-flower--6 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                        <svg class="sc-deco sc-stump sc-stump--1" aria-hidden="true" viewBox="0 0 160 110"><use href="#sc-stump" /></svg>
+                        <svg class="sc-deco sc-stump sc-stump--2" aria-hidden="true" viewBox="0 0 160 110"><use href="#sc-stump" /></svg>
+
+                        <div class="education__characters" aria-label="Giulia's illustrated characters">
+                            <img class="education__character fade-in" src="./assets/img/char-flowers.png"
+                                alt="Giulia holding flowers">
+                            <img class="education__character education__explorer fade-in"
+                                src="./assets/img/char-eploring.png" alt="Giulia exploring the world">
+                            <img class="education__character fade-in" src="./assets/img/char-wink.png" alt="Giulia winking">
+                        </div>
+
+                        <svg class="sc-butterfly sc-butterfly--1" aria-hidden="true" viewBox="0 0 30 24"><use href="#sc-butterfly" /></svg>
+                        <svg class="sc-butterfly sc-butterfly--2" aria-hidden="true" viewBox="0 0 30 24"><use href="#sc-butterfly" /></svg>
                     </div>
                     <div class="wrap__double-section">
                         <div class="wrap__education">
@@ -784,7 +899,31 @@
                                 my artistic journey,
                                 allowing me to express myself in diverse and exciting ways.
                             </p>
-                            <img class="hobby__drawing" src="./assets/img/char-drawing.png" alt="Giulia drawing">
+                            <!-- same meadow, smaller: Giulia sits on the grass and draws -->
+                            <div class="nature-scene nature-scene--mini">
+                                <div class="sc-hill sc-hill--far"></div>
+                                <div class="sc-hill sc-hill--near"></div>
+                                <svg class="sc-cloud sc-cloud--1" aria-hidden="true" viewBox="0 0 220 90"><use href="#sc-cloud" /></svg>
+                                <svg class="sc-cloud sc-cloud--2" aria-hidden="true" viewBox="0 0 220 90"><use href="#sc-cloud" /></svg>
+                                <svg class="sc-deco sc-cherry sc-sway" aria-hidden="true" viewBox="0 0 160 190"><use href="#sc-cherry" /></svg>
+                                <svg class="sc-deco sc-pine sc-pine--1 sc-sway" aria-hidden="true" viewBox="0 0 100 170"><use href="#sc-pine" /></svg>
+                                <svg class="sc-deco sc-bush sc-bush--1" aria-hidden="true" viewBox="0 0 120 70"><use href="#sc-bush" /></svg>
+                                <svg class="sc-deco sc-bush sc-bush--2" aria-hidden="true" viewBox="0 0 120 70"><use href="#sc-bush" /></svg>
+                                <div class="sc-ground"></div>
+                                <svg class="sc-deco sc-flower sc-flower--1 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                                <svg class="sc-deco sc-flower sc-flower--2 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                                <svg class="sc-deco sc-flower sc-flower--3 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                                <svg class="sc-deco sc-flower sc-flower--4 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                                <svg class="sc-deco sc-flower sc-flower--5 sc-sway" aria-hidden="true" viewBox="0 0 24 40"><use href="#sc-flower" /></svg>
+                                <svg class="sc-deco sc-stump sc-stump--1" aria-hidden="true" viewBox="0 0 160 110"><use href="#sc-stump" /></svg>
+                                <span class="sc-petal sc-petal--1"></span>
+                                <span class="sc-petal sc-petal--2"></span>
+                                <span class="sc-petal sc-petal--3"></span>
+                                <span class="sc-petal sc-petal--4"></span>
+                                <span class="sc-petal sc-petal--5"></span>
+                                <img class="hobby__drawing" src="./assets/img/char-drawing.png" alt="Giulia drawing">
+                                <svg class="sc-butterfly sc-butterfly--1" aria-hidden="true" viewBox="0 0 30 24"><use href="#sc-butterfly" /></svg>
+                            </div>
                         </div>
                         <div id="splideHobbies" class="splide">
                             <div class="splide__track">

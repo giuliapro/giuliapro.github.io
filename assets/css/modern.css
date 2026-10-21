@@ -1991,3 +1991,409 @@ label.project__field:hover {
 img[src*="/char-"]:not(.profile-picture) {
     filter: drop-shadow(0 10px 7px rgba(73, 73, 41, 0.2));
 }
+
+/* "See my drawings" sits directly in the hobby section (no .wrap__cta around it) */
+.wrap__hobby+.btn__custom,
+.wrap__section>.btn__custom {
+    align-self: center;
+}
+
+/* #region Nature scene (about) — Animal Crossing meadow, front view */
+
+.nature-scene {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    height: clamp(310px, 40vw, 500px);
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 6px 0 #5AA3C9, var(--shadow-md);
+    background:
+        radial-gradient(40% 55% at 82% 8%, rgba(255, 255, 255, 0.75), transparent 70%),
+        linear-gradient(180deg, #62B9F0 0%, #8CD0F6 45%, #C6E8FA 68%, #DFF3FB 100%);
+}
+
+.nature-scene .sc-symbols {
+    position: absolute;
+    pointer-events: none;
+}
+
+.nature-scene>* {
+    position: absolute;
+}
+
+.nature-scene svg,
+.nature-scene img {
+    max-inline-size: none;
+    max-block-size: none;
+}
+
+/* sky */
+.sc-cloud {
+    top: 8%;
+    left: 0;
+    width: clamp(110px, 17vw, 230px);
+    height: auto;
+    opacity: 0.95;
+    animation: sc-drift 110s linear infinite;
+    z-index: 0;
+}
+
+.sc-cloud--2 {
+    top: 24%;
+    width: clamp(80px, 11vw, 150px);
+    opacity: 0.85;
+    animation-duration: 150s;
+    animation-delay: -60s;
+}
+
+.sc-cloud--3 {
+    top: 4%;
+    width: clamp(90px, 13vw, 180px);
+    animation-duration: 130s;
+    animation-delay: -105s;
+}
+
+@keyframes sc-drift {
+    from {
+        translate: -30vw 0;
+    }
+
+    to {
+        translate: 110vw 0;
+    }
+}
+
+/* far hills + horizon */
+.sc-hill {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: 0;
+}
+
+.sc-hill--far {
+    left: -8%;
+    bottom: 28%;
+    width: 70%;
+    height: 30%;
+    background: #A5DE86;
+}
+
+.sc-hill--near {
+    right: -10%;
+    bottom: 28%;
+    width: 72%;
+    height: 22%;
+    background: #8FD474;
+}
+
+.sc-ground {
+    inset: auto 0 0 0;
+    height: 38%;
+    z-index: 1;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='44'%3E%3Cpath d='M10 14l5-9 5 9z M44 34l5-9 5 9z M58 12l4-7 4 7z' fill='%2368BC4F' opacity='.85'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, #8ED86B 0%, #7ECB5D 100%);
+}
+
+.sc-brick {
+    left: 0;
+    bottom: 14%;
+    width: 100%;
+    height: 24%;
+    z-index: 2;
+}
+
+/* trees behind the horizon line */
+.sc-deco {
+    z-index: 2;
+    height: auto;
+}
+
+.sc-pine--1 {
+    left: 5%;
+    bottom: 31%;
+    width: clamp(64px, 8.5vw, 118px);
+}
+
+.sc-pine--2 {
+    left: 13%;
+    bottom: 32%;
+    width: clamp(44px, 5.5vw, 76px);
+    filter: brightness(1.08);
+}
+
+.sc-cherry {
+    right: 6%;
+    bottom: 29%;
+    width: clamp(90px, 13vw, 180px);
+}
+
+.sc-bush--1 {
+    left: 21%;
+    bottom: 31%;
+    width: clamp(46px, 6vw, 86px);
+}
+
+.sc-bush--2 {
+    right: 22%;
+    bottom: 31%;
+    width: clamp(40px, 5vw, 72px);
+}
+
+/* flowers */
+.sc-flower {
+    z-index: 3;
+    width: clamp(14px, 1.9vw, 26px);
+}
+
+.sc-flower--1 { left: 9%;  bottom: 20%; color: #F8A6B2; }
+.sc-flower--2 { left: 11.5%; bottom: 15%; color: #FFE066; }
+.sc-flower--3 { left: 28%; bottom: 29%; color: #8FB8FF; }
+.sc-flower--4 { right: 12%; bottom: 17%; color: #F8A6B2; }
+.sc-flower--5 { right: 9%; bottom: 22%; color: #FFE066; }
+.sc-flower--6 { right: 30%; bottom: 28%; color: #B39DFF; }
+
+/* tree stumps in the foreground, cropped by the frame like in the game */
+.sc-stump {
+    z-index: 4;
+    height: auto;
+}
+
+.sc-stump--1 {
+    left: -3%;
+    bottom: -4%;
+    width: clamp(90px, 13vw, 180px);
+}
+
+.sc-stump--2 {
+    right: -2%;
+    bottom: -6%;
+    width: clamp(80px, 11vw, 160px);
+}
+
+/* the three characters live in the scene: standing on the grass, no floating */
+.nature-scene .education__characters {
+    left: 50%;
+    bottom: 6%;
+    translate: -50% 0;
+    z-index: 5;
+    width: min(94%, 700px);
+    margin: 0;
+    gap: clamp(0.25rem, 3vw, 3rem);
+}
+
+.nature-scene img.education__character {
+    animation: none;
+    filter: none;
+}
+
+/* life: things sway, butterflies wander */
+.sc-sway {
+    transform-origin: 50% 100%;
+    animation: sc-sway 5s ease-in-out infinite alternate;
+}
+
+.sc-flower--2, .sc-pine--2 { animation-delay: -1.2s; }
+.sc-flower--3, .sc-cherry { animation-delay: -2.4s; }
+.sc-flower--4 { animation-delay: -3.1s; }
+.sc-flower--5 { animation-delay: -0.6s; }
+.sc-flower--6 { animation-delay: -1.8s; }
+
+@keyframes sc-sway {
+    from {
+        rotate: -2deg;
+    }
+
+    to {
+        rotate: 2.5deg;
+    }
+}
+
+.sc-butterfly {
+    width: clamp(14px, 1.8vw, 24px);
+    z-index: 6;
+    left: 0;
+    top: 0;
+    animation: sc-wander 16s ease-in-out infinite, sc-flap 0.28s ease-in-out infinite alternate;
+}
+
+.sc-butterfly--1 {
+    top: 46%;
+    left: 30%;
+}
+
+.sc-butterfly--2 {
+    top: 54%;
+    left: 66%;
+    animation-duration: 21s, 0.24s;
+    animation-delay: -8s, 0s;
+}
+
+@keyframes sc-wander {
+
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    25% {
+        translate: 60px -26px;
+    }
+
+    50% {
+        translate: 20px 16px;
+    }
+
+    75% {
+        translate: -50px -14px;
+    }
+}
+
+@keyframes sc-flap {
+    to {
+        transform: scaleX(0.35);
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .nature-scene {
+        border-radius: 28px;
+        height: 290px;
+    }
+
+    .nature-scene .education__characters {
+        width: 96%;
+        gap: 0.15rem;
+    }
+}
+
+/* #endregion */
+
+/* #region Mini scene (about, free time) */
+
+.hobby__intro {
+    align-items: stretch;
+}
+
+.nature-scene--mini {
+    flex: 0 0 min(44%, 460px);
+    height: auto;
+    min-height: 320px;
+    align-self: stretch;
+}
+
+/* trees and flowers rearranged for the smaller frame */
+.nature-scene--mini .sc-cherry {
+    right: auto;
+    left: 3%;
+    bottom: 30%;
+    width: clamp(110px, 13vw, 170px);
+}
+
+.nature-scene--mini .sc-pine--1 {
+    left: auto;
+    right: 6%;
+    bottom: 31%;
+    width: clamp(60px, 7vw, 90px);
+}
+
+.nature-scene--mini .sc-bush--1 {
+    left: 40%;
+    bottom: 32%;
+}
+
+.nature-scene--mini .sc-bush--2 {
+    right: 24%;
+    bottom: 31%;
+}
+
+.nature-scene--mini .sc-flower--1 { left: 8%;  bottom: 14%; color: #F8A6B2; }
+.nature-scene--mini .sc-flower--2 { left: 18%; bottom: 20%; color: #FFE066; }
+.nature-scene--mini .sc-flower--3 { right: 30%; bottom: 14%; color: #8FB8FF; }
+.nature-scene--mini .sc-flower--4 { right: 14%; bottom: 18%; color: #F8A6B2; }
+.nature-scene--mini .sc-flower--5 { right: 8%;  bottom: 10%; color: #B39DFF; }
+
+.nature-scene--mini .sc-stump--1 {
+    left: auto;
+    right: -3%;
+    bottom: -5%;
+    width: clamp(80px, 9vw, 120px);
+}
+
+.nature-scene--mini .sc-butterfly--1 {
+    top: 40%;
+    left: 20%;
+}
+
+/* Giulia sits on the grass, drawing — no floating */
+.hobby__intro .nature-scene--mini .hobby__drawing {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    translate: -50% 0;
+    z-index: 5;
+    flex: none;
+    width: 48%;
+    max-width: 230px;
+    height: auto;
+    animation: none;
+    filter: none;
+}
+
+/* cherry-blossom petals drifting down from the tree */
+.sc-petal {
+    left: 12%;
+    top: 22%;
+    width: 9px;
+    height: 9px;
+    border-radius: 80% 0 80% 0;
+    background: #F9B9C9;
+    z-index: 4;
+    opacity: 0;
+    animation: sc-petal 9s ease-in infinite;
+}
+
+.sc-petal--2 { left: 18%; top: 28%; animation-delay: -2s; animation-duration: 11s; background: #F59FB6; }
+.sc-petal--3 { left: 9%;  top: 30%; animation-delay: -4.5s; animation-duration: 10s; }
+.sc-petal--4 { left: 22%; top: 20%; animation-delay: -6s; animation-duration: 12s; background: #FFFFFF; }
+.sc-petal--5 { left: 15%; top: 34%; animation-delay: -7.5s; animation-duration: 9.5s; background: #F59FB6; }
+
+@keyframes sc-petal {
+    0% {
+        opacity: 0;
+        translate: 0 0;
+        rotate: 0deg;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    50% {
+        translate: 28px 90px;
+        rotate: 160deg;
+    }
+
+    100% {
+        opacity: 0;
+        translate: -10px 210px;
+        rotate: 340deg;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nature-scene--mini {
+        flex: none;
+        width: 100%;
+        height: 300px;
+        min-height: 0;
+    }
+
+    .hobby__intro .nature-scene--mini .hobby__drawing {
+        width: 42%;
+        max-width: 190px;
+    }
+}
+
+/* #endregion */
