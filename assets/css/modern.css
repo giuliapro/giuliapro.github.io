@@ -2397,3 +2397,35 @@ img[src*="/char-"]:not(.profile-picture) {
 }
 
 /* #endregion */
+
+/* Reels played from the site: vertical clips, muted, loop, only playing while on screen (main.js) */
+.grid__reels--video {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.grid__reels--video .wrap-reels-content {
+    height: auto;
+}
+
+.reel__video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    background: #1b1b1b;
+    border-radius: var(--radius-img);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+
+.reel__video:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+@media screen and (max-width: 992px) {
+    .grid__reels--video {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

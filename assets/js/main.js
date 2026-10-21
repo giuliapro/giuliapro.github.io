@@ -115,6 +115,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // reels: play only while visible, pause when scrolled away
+    const reelVideos = document.querySelectorAll('video.reel__video');
+    if (reelVideos.length && 'IntersectionObserver' in window) {
+        const reelObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play().catch(() => { });
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, { threshold: 0.4 });
+        reelVideos.forEach(video => reelObserver.observe(video));
+    }
+
     // scroll animation fade-in
 
     document.querySelectorAll('img[src*="/char-"]').forEach(character => {
@@ -266,7 +281,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     // Link click → mostra loader
-    const links = Array.from(document.querySelectorAll('a[href]')).filter(link => link.target !== '_blank');
+    // (mailto:, tel:, in-page anchors and downloads don't leave the page, so they must not trigger the loader)
+    const links = Array.from(document.querySelectorAll('a[href]')).filter(link => {
+        const href = link.getAttribute('href');
+        return link.target !== '_blank'
+            && !link.hasAttribute('download')
+            && !/^(mailto:|tel:|javascript:|#)/i.test(href);
+    });
     links.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
