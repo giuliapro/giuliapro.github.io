@@ -3678,7 +3678,7 @@ nav.navbar {
 }
 
 .navbar .logo:hover {
-    background-image: url("../img/logo_hover.png");
+    background-image: url("../img/logo-hover.png");
     cursor: pointer;
     filter: none !important;
 }
