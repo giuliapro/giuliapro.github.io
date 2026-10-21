@@ -4316,7 +4316,8 @@ h1.jumbo__text {
     grid-template-areas:
         "tools tools tools"
         "contacts portrait languages";
-    gap: clamp(1.5rem, 3vw, 3rem);
+    column-gap: clamp(0.75rem, 1.5vw, 1.5rem);
+    row-gap: clamp(1.5rem, 3vw, 3rem);
     width: 100%;
     align-items: center;
 }
@@ -4331,10 +4332,12 @@ h1.jumbo__text {
 
 .wrap__info-text .wrap__text-line:first-child .single__experience:first-child {
     grid-area: contacts;
+    justify-self: end;
 }
 
 .wrap__info-text .wrap__text-line:first-child .single__experience:last-child {
     grid-area: languages;
+    justify-self: start;
 }
 
 .wrap__info-text>.wrap__text-line:last-child>.single__experience {
@@ -4356,6 +4359,13 @@ h1.jumbo__text {
 .wrap__info-text .wrap__text-line:first-child .single__experience {
     background: transparent;
     border-radius: 0;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.wrap__info-text .wrap__text-line:first-child .experience__header {
+    align-items: center;
+    text-align: center;
 }
 
 .wrap__profile-pic.about__computer {
@@ -4414,6 +4424,10 @@ h1.jumbo__text {
         max-width: 320px;
     }
 
+    .wrap__info-text .wrap__text-line:first-child .single__experience {
+        justify-self: center;
+    }
+
 }
 
 .wrap__info-text .single__experience {
@@ -4439,6 +4453,10 @@ span.flag img {
 
     .wrap__profile-pic.about__computer {
         max-width: 280px;
+    }
+
+    .wrap__info-text .wrap__text-line:first-child .single__experience {
+        justify-self: center;
     }
 }
 
