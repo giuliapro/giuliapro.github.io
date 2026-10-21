@@ -176,6 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             buttonsFilter.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+            // on phones the filter bar scrolls sideways: keep the chosen one in view
+            button.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
             const target = button.getAttribute('data-target');
             let shown = 0;
             projects.forEach(project => {

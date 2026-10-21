@@ -36,9 +36,6 @@ html {
 
 body {
     background-color: var(--beige-100);
-    background-image: radial-gradient(circle, rgba(200, 178, 148, 0.45) 1.5px, transparent 1.6px);
-    background-size: 28px 28px;
-    background-attachment: fixed;
 }
 
 ::selection {
@@ -877,9 +874,12 @@ h1.jumbo__text .green {
 }
 
 @media screen and (max-width: 768px) {
-    .wrap__toolbar {
+    .wrap__toolbar,
+    .wrap__section:has(> .wrap__projects[data-layout]) > .wrap__toolbar {
         top: 76px;
         width: 100%;
+        justify-content: flex-start;
+        margin-inline: 0;
         flex-wrap: nowrap;
         overflow-x: auto;
         scrollbar-width: none;
@@ -1826,3 +1826,168 @@ label.project__field:hover {
 }
 
 /* #endregion */
+
+/* #region Mobile check + centered titles */
+
+/* all section titles are centered, with the dotted line on both sides */
+.wrap__section-header {
+    justify-content: center;
+}
+
+.wrap__section-header::before {
+    content: "";
+    flex: 1;
+    height: 0;
+    border-top: 4px dotted var(--brown-200);
+    margin-right: 0.5rem;
+    transform-origin: right center;
+}
+
+.fade-in .wrap__section-header::before {
+    transform: scaleX(0);
+    transition: transform 1.1s 0.25s var(--ease-out);
+}
+
+.fade-in.visible .wrap__section-header::before {
+    transform: scaleX(1);
+}
+
+.uni-projects__intro p {
+    text-align: center;
+}
+
+/* project name + tags at the top of a project page */
+.wrap__details>.wrap:has(> h2) {
+    align-items: center;
+    text-align: center;
+}
+
+.wrap__details>.wrap:has(> h2) .wrap:has(.project__field) {
+    justify-content: center;
+}
+
+/* call-to-action buttons under a section */
+.wrap__cta {
+    display: flex;
+    justify-content: center;
+}
+
+/* the three characters: always in a row, and smaller */
+.education__characters {
+    width: min(100%, 720px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.25rem, 2vw, 2rem);
+}
+
+.education__character {
+    width: 100%;
+    max-width: 210px;
+}
+
+@media screen and (max-width: 568px) {
+    .education__characters {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.25rem;
+    }
+
+    .education__character {
+        width: 100%;
+        max-width: 110px;
+    }
+}
+
+/* about hero on tablet / phone: one tight, centered composition instead of a tall empty card */
+@media screen and (max-width: 992px) {
+    .wrap__intro {
+        padding: 1.5rem 1.25rem 1.75rem;
+        border-radius: 32px;
+    }
+
+    .wrap__grid-landing {
+        min-height: 0;
+        gap: 1.75rem;
+    }
+
+    .wrap__left-heading {
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .wrap__left-heading>img {
+        order: 1;
+        margin: 0 auto;
+        width: min(62vw, 270px);
+        max-width: none;
+    }
+
+    h1.jumbo__text {
+        order: 2;
+        position: relative;
+        z-index: 2;
+        width: auto;
+        height: auto;
+        margin-top: -1.75rem;
+        text-align: center;
+        font-size: clamp(3rem, 15vw, 5.5rem);
+    }
+
+    .wrap__stars {
+        height: 100%;
+        top: 0;
+        bottom: auto;
+    }
+
+    .wrap__stars .stars1 {
+        top: 10%;
+        left: 2%;
+        width: 54px;
+    }
+
+    .wrap__stars .stars2 {
+        top: 4%;
+        right: 8%;
+        width: 44px;
+    }
+
+    .wrap__stars .stars3 {
+        top: 40%;
+        bottom: auto;
+        right: 4%;
+        width: 40px;
+    }
+
+    .wrap__contact-links {
+        justify-content: center;
+    }
+}
+
+/* #endregion */
+
+/* filter bar on phones: starts at the first filter (left) and scrolls sideways */
+@media screen and (max-width: 768px) {
+    .wrap__section:has(> .wrap__projects[data-layout])>.wrap__toolbar {
+        width: 100%;
+        justify-content: flex-start;
+        margin-inline: 0;
+        flex-wrap: nowrap;
+    }
+}
+
+/* cards keep their own left alignment inside the centered page headers */
+.wrap__projects,
+.wrap__projects .single__project {
+    text-align: left;
+}
+
+.wrap__back-btn a {
+    text-decoration: none;
+}
+
+/* soft shadow under every character (the computer one already has a ground shadow) */
+img[src*="/char-"]:not(.profile-picture) {
+    filter: drop-shadow(0 10px 7px rgba(73, 73, 41, 0.2));
+}
