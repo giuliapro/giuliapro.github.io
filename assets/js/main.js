@@ -77,26 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.append(toTop);
         window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), { passive: true });
 
-        // little stars burst out of every click
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.addEventListener('click', e => {
-                for (let i = 0; i < 6; i++) {
-                    const spark = document.createElement('img');
-                    const angle = (Math.PI * 2 * i) / 6 + Math.random() * 0.6;
-                    const dist = 28 + Math.random() * 30;
-                    spark.src = 'assets/img/stars.png';
-                    spark.alt = '';
-                    spark.className = 'click-spark';
-                    spark.style.left = e.clientX + 'px';
-                    spark.style.top = e.clientY + 'px';
-                    spark.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
-                    spark.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
-                    document.body.append(spark);
-                    setTimeout(() => spark.remove(), 800);
-                }
-            });
-        }
-
         // spotlight that follows the cursor on project cards
         document.querySelectorAll('.single__project').forEach(card => {
             card.addEventListener('pointermove', e => {
@@ -113,6 +93,26 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll(
             '.single__project, .single__experience, .wrap__single-education, .drawing, .grid__project-content img'
         ).forEach(el => el.classList.add('fade-in'));
+    }
+
+    // little stars burst out of every click
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.addEventListener('click', e => {
+            for (let i = 0; i < 6; i++) {
+                const spark = document.createElement('img');
+                const angle = (Math.PI * 2 * i) / 6 + Math.random() * 0.6;
+                const dist = 28 + Math.random() * 30;
+                spark.src = 'assets/img/stars.png';
+                spark.alt = '';
+                spark.className = 'click-spark';
+                spark.style.left = e.clientX + 'px';
+                spark.style.top = e.clientY + 'px';
+                spark.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+                spark.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+                document.body.append(spark);
+                setTimeout(() => spark.remove(), 800);
+            }
+        });
     }
 
     // scroll animation fade-in
