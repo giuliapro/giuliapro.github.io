@@ -2714,9 +2714,19 @@ img[src*="/char-"]:not(.profile-picture) {
     filter: none;
 }
 
-/* a taller sky so the covers have room to fan out above the labels */
-.nature-scene:has(.scene-picks) {
-    height: clamp(340px, 44vw, 560px);
+/* the frame clips only the decorations, so the covers can fan out over the page above the scene */
+.nature-scene:has(.sc-clip) {
+    overflow: visible;
+}
+
+.sc-clip {
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.sc-clip>* {
+    position: absolute;
 }
 
 .scene-pick .education__character {
@@ -2895,30 +2905,19 @@ img[src*="/char-"]:not(.profile-picture) {
     max-width: none;
 }
 
-/* room above the seated character for the fan of drawings (desktop only, see below) */
-@media (hover: hover) and (min-width: 992px) {
-    .nature-scene--mini:has(.scene-pick) {
-        min-height: 460px;
-    }
-}
-
 /* drawings are portrait */
 .nature-scene .scene-pick__cards--drawings .scene-pick__card img {
     aspect-ratio: 4 / 5;
 }
 
-/* touch screens (and narrow ones, where the sky is too short): a tap goes straight to the projects */
-@media (hover: none), (max-width: 991px) {
+/* touch screens and phones: a tap goes straight to the page */
+@media (hover: none), (max-width: 767px) {
     .scene-pick__cards {
         display: none;
     }
 }
 
 @media screen and (max-width: 568px) {
-    .nature-scene:has(.scene-picks) {
-        height: 300px;
-    }
-
     .scene-pick__label {
         bottom: calc(100% + 0.35rem);
         padding: 0.25rem 0.55rem;
