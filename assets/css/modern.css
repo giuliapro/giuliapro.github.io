@@ -2778,7 +2778,9 @@ img[src*="/char-"]:not(.profile-picture) {
 
 /* hover / keyboard focus: the character hops up, the label goes coral, three covers fan out */
 .scene-pick:hover .education__character,
-.scene-pick:focus-visible .education__character {
+.scene-pick:focus-visible .education__character,
+.scene-pick:hover .hobby__drawing,
+.scene-pick:focus-visible .hobby__drawing {
     transform: translateY(-14px);
 }
 
@@ -2802,7 +2804,7 @@ img[src*="/char-"]:not(.profile-picture) {
 .scene-pick__cards {
     position: absolute;
     left: 50%;
-    bottom: calc(100% + 3rem);
+    bottom: calc(100% + 3.8rem);
     z-index: 2;
     width: 0;
     height: 0;
@@ -2873,6 +2875,38 @@ img[src*="/char-"]:not(.profile-picture) {
     z-index: 1;
 }
 
+/* free time scene: the link takes over the seated character's spot, the image just fills it */
+.nature-scene--mini a.scene-pick--drawing {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    translate: -50% 0;
+    z-index: 5;
+    width: 48%;
+    max-width: 230px;
+}
+
+.hobby__intro .nature-scene--mini .scene-pick .hobby__drawing {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    translate: none;
+    width: 100%;
+    max-width: none;
+}
+
+/* room above the seated character for the fan of drawings (desktop only, see below) */
+@media (hover: hover) and (min-width: 992px) {
+    .nature-scene--mini:has(.scene-pick) {
+        min-height: 460px;
+    }
+}
+
+/* drawings are portrait */
+.nature-scene .scene-pick__cards--drawings .scene-pick__card img {
+    aspect-ratio: 4 / 5;
+}
+
 /* touch screens (and narrow ones, where the sky is too short): a tap goes straight to the projects */
 @media (hover: none), (max-width: 991px) {
     .scene-pick__cards {
@@ -2894,6 +2928,13 @@ img[src*="/char-"]:not(.profile-picture) {
 
     .scene-pick__label::after {
         border-width: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nature-scene--mini a.scene-pick--drawing {
+        width: 42%;
+        max-width: 190px;
     }
 }
 
