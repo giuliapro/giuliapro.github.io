@@ -2698,3 +2698,203 @@ img[src*="/char-"]:not(.profile-picture) {
 }
 
 /* #endregion */
+
+/* #region About: characters as doors to the projects */
+
+.scene-pick {
+    position: relative;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+/* links fade on hover site-wide; the characters shouldn't */
+.nature-scene a.scene-pick:hover {
+    filter: none;
+}
+
+/* a taller sky so the covers have room to fan out above the labels */
+.nature-scene:has(.scene-picks) {
+    height: clamp(340px, 44vw, 560px);
+}
+
+.scene-pick .education__character {
+    position: relative;
+    z-index: 1;
+}
+
+/* speech-bubble label over each head, popping in one after the other once the scene is revealed */
+.scene-pick__label {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.6rem);
+    z-index: 3;
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 0 var(--brown-200), var(--shadow-sm);
+    color: var(--brown-600);
+    font-size: clamp(0.72rem, 1.1vw, 0.95rem);
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    translate: -50% 12px;
+    scale: 0.6;
+    /* the pop-in animation owns translate/scale, so the hover lift uses transform */
+    transition: transform 0.45s var(--ease-spring), background-color 0.25s, color 0.25s;
+}
+
+.scene-pick__label::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    translate: -50% -1px;
+    border: 7px solid transparent;
+    border-top-color: var(--surface);
+    transition: border-color 0.25s;
+}
+
+.fade-in.visible .scene-pick__label {
+    animation: pick-pop 0.7s var(--ease-spring) both;
+    animation-delay: calc(0.5s + var(--n) * 0.45s);
+}
+
+@keyframes pick-pop {
+    from {
+        opacity: 0;
+        translate: -50% 12px;
+        scale: 0.6;
+    }
+
+    to {
+        opacity: 1;
+        translate: -50% 0;
+        scale: 1;
+    }
+}
+
+/* hover / keyboard focus: the character hops up, the label goes coral, three covers fan out */
+.scene-pick:hover .education__character,
+.scene-pick:focus-visible .education__character {
+    transform: translateY(-14px);
+}
+
+.scene-pick:hover .scene-pick__label,
+.scene-pick:focus-visible .scene-pick__label {
+    transform: translateY(-14px);
+    background: var(--red-200);
+    color: var(--light);
+}
+
+.scene-pick:hover .scene-pick__label::after,
+.scene-pick:focus-visible .scene-pick__label::after {
+    border-top-color: var(--red-200);
+}
+
+.scene-pick:focus-visible .scene-pick__label {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+
+.scene-pick__cards {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 3rem);
+    z-index: 2;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.scene-pick__card {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: clamp(64px, 7.5vw, 112px);
+    padding: 0.3rem 0.3rem 0.35rem;
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: 0 4px 0 var(--brown-200), var(--shadow-md);
+    color: var(--dark);
+    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 0;
+    transform: translate(-50%, 24px) scale(0.7);
+    transition: transform 0.5s var(--ease-spring), opacity 0.25s;
+}
+
+.nature-scene .scene-pick__card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 615 / 512;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.scene-pick:hover .scene-pick__card,
+.scene-pick:focus-visible .scene-pick__card {
+    opacity: 1;
+}
+
+.scene-pick:hover .scene-pick__card:nth-child(1),
+.scene-pick:focus-visible .scene-pick__card:nth-child(1) {
+    transform: translate(-128%, 6px) rotate(-9deg);
+}
+
+.scene-pick:hover .scene-pick__card:nth-child(2),
+.scene-pick:focus-visible .scene-pick__card:nth-child(2) {
+    transform: translate(-50%, -8px);
+    transition-delay: 0.05s;
+}
+
+.scene-pick:hover .scene-pick__card:nth-child(3),
+.scene-pick:focus-visible .scene-pick__card:nth-child(3) {
+    transform: translate(28%, 6px) rotate(9deg);
+    transition-delay: 0.1s;
+}
+
+.scene-pick__title {
+    padding-inline: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* the middle card sits in front */
+.scene-pick__card:nth-child(2) {
+    z-index: 1;
+}
+
+/* touch screens (and narrow ones, where the sky is too short): a tap goes straight to the projects */
+@media (hover: none), (max-width: 991px) {
+    .scene-pick__cards {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .nature-scene:has(.scene-picks) {
+        height: 300px;
+    }
+
+    .scene-pick__label {
+        bottom: calc(100% + 0.35rem);
+        padding: 0.25rem 0.55rem;
+        font-size: 0.62rem;
+        border-width: 1px;
+    }
+
+    .scene-pick__label::after {
+        border-width: 5px;
+    }
+}
+
+/* #endregion */

@@ -210,6 +210,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // projects.html?filter=web-design opens with that filter on (links from the about scene)
+    const initialFilter = new URLSearchParams(location.search).get('filter');
+    if (initialFilter) {
+        [...buttonsFilter].find(btn => btn.getAttribute('data-target') === initialFilter)?.click();
+    }
+
 
     // drawing zoom
     const drawingButtons = document.querySelectorAll('.drawing');
