@@ -130,6 +130,36 @@ document.addEventListener('DOMContentLoaded', function () {
         reelVideos.forEach(video => reelObserver.observe(video));
     }
 
+    // about hero: the character throws the project cards out of her raised hand, then they follow the pointer a little
+    const heroCards = document.querySelector('.hero-cards');
+    const heroAvatar = heroCards?.parentElement.querySelector(':scope > img');
+    if (heroCards && heroAvatar && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const throwCards = () => {
+            const a = heroAvatar.getBoundingClientRect();
+            const hand = { x: a.left + a.width * 0.8, y: a.top + a.height * 0.18 };
+            heroCards.querySelectorAll('.hero-card').forEach(card => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty('--fx', hand.x - (r.left + r.width / 2) + 'px');
+                card.style.setProperty('--fy', hand.y - (r.top + r.height / 2) + 'px');
+            });
+            heroCards.classList.add('is-thrown');
+        };
+        heroAvatar.complete ? throwCards() : heroAvatar.addEventListener('load', throwCards, { once: true });
+
+        const hero = heroCards.closest('.wrap__intro');
+        if (window.matchMedia('(hover: hover)').matches) {
+            hero.addEventListener('pointermove', e => {
+                const r = hero.getBoundingClientRect();
+                heroCards.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+                heroCards.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+            });
+            hero.addEventListener('pointerleave', () => {
+                heroCards.style.setProperty('--px', 0);
+                heroCards.style.setProperty('--py', 0);
+            });
+        }
+    }
+
     // scroll animation fade-in
 
     document.querySelectorAll('img[src*="/char-"]').forEach(character => {

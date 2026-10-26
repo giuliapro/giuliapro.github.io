@@ -2938,3 +2938,200 @@ img[src*="/char-"]:not(.profile-picture) {
 }
 
 /* #endregion */
+
+/* #region About hero: role line, buttons, thrown project cards */
+
+/* role under the name, as a little paper tag */
+h1.jumbo__text .hero-role {
+    display: table;
+    margin-top: 1rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: var(--surface);
+    box-shadow: 0 4px 0 var(--brown-200), var(--shadow-sm);
+    color: var(--brown-600);
+    font-size: clamp(0.85rem, 1.25vw, 1.1rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-shadow: none;
+}
+
+/* secondary button: paper instead of coral */
+.btn__custom.btn__custom--ghost {
+    background: var(--surface);
+    color: var(--brown-600);
+    border: 2px solid var(--line);
+    box-shadow: 0 5px 0 var(--brown-200), var(--shadow-sm);
+}
+
+.btn__custom.btn__custom--ghost:hover {
+    background: var(--beige-200);
+    box-shadow: 0 8px 0 var(--brown-200), var(--shadow-sm);
+}
+
+.btn__custom.btn__custom--ghost:active {
+    box-shadow: 0 1px 0 var(--brown-200);
+}
+
+/* the cards fly out of the raised hand (main.js sets --fx/--fy and adds .is-thrown),
+   then hang around the character, bobbing, tilted like stickers */
+.hero-cards {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.hero-card {
+    position: absolute;
+    width: clamp(84px, 9vw, 124px);
+    pointer-events: auto;
+    color: var(--dark);
+    text-decoration: none;
+    /* parallax, driven by the pointer (main.js sets --px/--py on .hero-cards) */
+    transform: translate(calc(var(--px, 0) * var(--depth, 10) * 1px), calc(var(--py, 0) * var(--depth, 10) * 1px));
+    transition: transform 0.6s var(--ease-out);
+}
+
+.wrap__intro a.hero-card:hover {
+    filter: none;
+    z-index: 2;
+}
+
+.hero-card__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.35rem 0.35rem 0.45rem;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 0 var(--brown-200), var(--shadow-md);
+    rotate: var(--tilt, 0deg);
+    animation: hero-bob 5s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * -1.3s);
+    transition: rotate 0.45s var(--ease-spring), scale 0.45s var(--ease-spring);
+}
+
+.hero-card__inner img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 615 / 512;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.hero-card__title {
+    padding-inline: 0.2rem;
+    font-size: clamp(0.66rem, 0.85vw, 0.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hero-card__tag {
+    align-self: flex-start;
+    margin-left: 0.2rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: clamp(0.55rem, 0.7vw, 0.66rem);
+    font-weight: 600;
+    background: #FFF1B8;
+}
+
+.hero-card--2 .hero-card__tag { background: #FFD9DF; }
+.hero-card--3 .hero-card__tag { background: #DDF2E0; }
+
+.hero-card:hover .hero-card__inner,
+.hero-card:focus-visible .hero-card__inner {
+    rotate: 0deg;
+    scale: 1.12;
+}
+
+.hero-card:focus-visible {
+    outline: none;
+}
+
+.hero-card:focus-visible .hero-card__inner {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+
+/* where each card lands, around the character */
+.hero-card--1 { left: 0;    top: 2%;  --tilt: -8deg; --depth: 14; --i: 0; }
+.hero-card--2 { right: -2%; top: -2%; --tilt: 7deg;  --depth: 18; --i: 1; }
+.hero-card--3 { right: -7%; top: 44%; --tilt: -6deg; --depth: 12; --i: 2; }
+
+/* the top-left star would sit right behind the Dalia card */
+.wrap__left-heading:has(.hero-cards) .stars1 {
+    display: none;
+}
+
+/* lift the character a bit so the name no longer runs over her legs */
+@media screen and (min-width: 993px) {
+    .wrap__left-heading:has(.hero-cards)>img {
+        margin-bottom: clamp(2.5rem, 6vw, 5rem);
+    }
+}
+
+.hero-cards.is-thrown .hero-card__inner {
+    animation: hero-throw 0.9s var(--ease-spring) both, hero-bob 5s ease-in-out infinite;
+    animation-delay: calc(1.1s + var(--i, 0) * 0.13s), calc(var(--i, 0) * -1.3s);
+}
+
+@keyframes hero-throw {
+    0% {
+        opacity: 0;
+        transform: translate(var(--fx, 0), var(--fy, 0)) scale(0.15) rotate(-40deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hero-bob {
+    50% {
+        translate: 0 -7px;
+    }
+}
+
+/* tablet / phone: the heading stacks under the character, keep two cards beside her */
+@media screen and (max-width: 992px) {
+    .hero-card {
+        width: clamp(78px, 17vw, 110px);
+    }
+
+    .hero-card--1 { left: 2%;  top: 6%; }
+    .hero-card--2 { right: 2%; top: 2%; }
+
+    .hero-card--3 {
+        display: none;
+    }
+
+    h1.jumbo__text .hero-role {
+        margin-inline: auto;
+        white-space: nowrap;
+    }
+}
+
+/* phones: the character fills the width, there's no free space around her */
+@media screen and (max-width: 568px) {
+    .hero-cards {
+        display: none;
+    }
+
+    .wrap__left-heading:has(.hero-cards) .stars1 {
+        display: block;
+    }
+}
+
+/* #endregion */
