@@ -11,14 +11,99 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // display select index
+    // landing: Fuffi speaks one line at a time, like an in-game dialogue.
+    // Clicking (or Enter / Space) finishes the line being typed, then moves on; the choices appear after the last line.
 
-    const thirdLine = document.querySelector('.third_line');
+    const dialogue = document.querySelector('.dialogue');
     const selectOption = document.querySelector('.select__option');
 
-    thirdLine?.addEventListener('animationend', function () {
-        selectOption.classList.add('show-select-option');
-    });
+    if (dialogue && selectOption) {
+        const lineEl = dialogue.querySelector('.dialogue__line');
+        const hour = new Date().getHours();
+        const [before, after] =
+            hour >= 5 && hour < 12 ? ['Good morning, ', '!'] :
+            hour >= 12 && hour < 18 ? ['Good afternoon, ', '!'] :
+            hour >= 18 && hour < 22 ? ['Good evening, ', '!'] :
+            ['Oh! Still awake, ', '?'];
+        const lines = [
+            `${before}<span class="blue">Visitor</span>${after}`,
+            "Welcome to Giulia's island! She designs websites, graphics and social media content.",
+            'How can I help you today? Pick where you\'d like to go!',
+        ];
+        const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let index = -1;
+        let chars = [];
+        let shown = 0;
+        let timer = null;
+
+        // every character gets its own span, hidden until typed, so the line never reflows while it grows
+        const split = node => {
+            [...node.childNodes].forEach(child => {
+                if (child.nodeType === Node.TEXT_NODE) {
+                    const frag = document.createDocumentFragment();
+                    [...child.textContent].forEach(c => {
+                        const span = document.createElement('span');
+                        span.className = 'dialogue__char';
+                        span.textContent = c;
+                        frag.append(span);
+                    });
+                    child.replaceWith(frag);
+                } else {
+                    split(child);
+                }
+            });
+        };
+
+        const lineDone = () => {
+            clearTimeout(timer);
+            timer = null;
+            chars.forEach(c => c.classList.add('is-typed'));
+            shown = chars.length;
+            const last = index === lines.length - 1;
+            dialogue.classList.toggle('is-waiting', !last);
+            if (last) {
+                dialogue.classList.add('is-done');
+                selectOption.classList.add('show-select-option');
+            }
+        };
+
+        const typeNext = () => {
+            if (shown >= chars.length) return lineDone();
+            const c = chars[shown++];
+            c.classList.add('is-typed');
+            // a little pause after punctuation, like the game's text speed
+            timer = setTimeout(typeNext, /[.,!?]/.test(c.textContent) ? 220 : 28);
+        };
+
+        const nextLine = () => {
+            index++;
+            dialogue.classList.remove('is-waiting');
+            lineEl.innerHTML = lines[index];
+            split(lineEl);
+            chars = [...lineEl.querySelectorAll('.dialogue__char')];
+            shown = 0;
+            instant ? lineDone() : typeNext();
+        };
+
+        const advance = () => {
+            if (timer) return lineDone();
+            // a click before Fuffi starts talking just starts her sooner
+            if (index === -1) clearTimeout(start);
+            if (index < lines.length - 1) nextLine();
+        };
+
+        dialogue.addEventListener('click', advance);
+        dialogue.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                advance();
+            }
+        });
+
+        lineEl.textContent = '';
+        // start once the bubble has faded in
+        const start = setTimeout(nextLine, instant ? 0 : 1900);
+    }
 
 
 

@@ -1,6 +1,6 @@
 /*
     Landing (index.html) — same Animal Crossing UI kit as modern.css.
-    The speech-bubble typing animation and its markup are untouched.
+    Fuffi's dialogue is typed by main.js, one line at a time.
 */
 
 :root {
@@ -111,7 +111,7 @@ body {
 }
 
 .fumetto_link:nth-of-type(1)::before {
-    content: "\f378";
+    content: "\f324";
     background: var(--green);
 }
 
@@ -121,7 +121,7 @@ body {
 }
 
 .fumetto_link:nth-of-type(3)::before {
-    content: "\f324";
+    content: "\f4b0";
     background: var(--pink);
 }
 
@@ -173,6 +173,82 @@ body {
 
 /* #endregion */
 
+/* #region Dialogue — Fuffi types one line at a time (main.js) */
+
+/* rounded type, closer to the game's dialogue font */
+.overlay__fumetto .fumetto,
+.fumetto_link {
+    font-family: "Nunito", "Roboto", sans-serif;
+    font-weight: 800;
+}
+
+.text__fumetto.dialogue {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.text__fumetto p.dialogue__line {
+    display: block;
+    width: auto;
+    overflow: visible;
+    white-space: normal;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.4;
+    /* room for the longest line, so the bubble doesn't jump between lines */
+    min-height: calc(3 * 1.4em);
+}
+
+.dialogue__char {
+    opacity: 0;
+}
+
+.dialogue__char.is-typed {
+    opacity: 1;
+}
+
+/* the bouncing arrow that says "click to continue" */
+.dialogue__next {
+    position: absolute;
+    right: 0;
+    bottom: -0.4rem;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 13px solid var(--dark-orange);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.dialogue.is-waiting .dialogue__next {
+    opacity: 1;
+    animation: next-bounce 0.55s ease-in-out infinite alternate;
+}
+
+@keyframes next-bounce {
+    to {
+        translate: 0 6px;
+    }
+}
+
+.dialogue:focus-visible {
+    outline: 3px dashed var(--blue);
+    outline-offset: 10px;
+    border-radius: 14px;
+}
+
+/* the choices wait for the last line, and can't be clicked while hidden */
+.select__option:not(.show-select-option) {
+    pointer-events: none;
+}
+
+.select__option.show-select-option {
+    animation: choices-in 0.6s var(--ease-spring) both;
+}
+
+/* #endregion */
+
 /* #region Tablet / phone */
 
 @media screen and (max-width: 992px) {
@@ -193,8 +269,7 @@ body {
         transform: translate(-50%, -50%) scale(var(--s));
     }
 
-    /* the bubble keeps its typing animation (disabled on small screens already);
-       here it only gets the same surface treatment as the other cards */
+    /* the bubble gets the same surface treatment as the other cards */
     .wrap__fumetto {
         border-radius: 28px;
         background-color: var(--surface);
@@ -204,21 +279,6 @@ body {
 
     .name__fumetto {
         box-shadow: 0 4px 0 rgba(73, 73, 41, 0.2);
-    }
-
-    /* the greeting reads as one block and the question no longer breaks mid-sentence */
-    .text__fumetto .wrap__text {
-        display: block;
-    }
-
-    .text__fumetto p.first_line {
-        display: block;
-        margin-bottom: 0.25rem;
-    }
-
-    .text__fumetto p.second_line,
-    .text__fumetto p.third_line {
-        display: inline;
     }
 
     /* choices become full-width, thumb-sized buttons under the bubble */
@@ -231,7 +291,6 @@ body {
         scale: 1;
         width: 100%;
         gap: 0.65rem;
-        animation: choices-in 0.6s 1.6s var(--ease-spring) both;
     }
 
     .fumetto_link {
@@ -248,6 +307,15 @@ body {
 
     .fumetto_link:active {
         box-shadow: 0 1px 0 var(--brown-200);
+    }
+
+    /* style.css shows the choices straight away on small screens; here they also wait for Fuffi */
+    .select__option:not(.show-select-option) {
+        opacity: 0;
+    }
+
+    .text__fumetto p.dialogue__line {
+        font-size: clamp(1.05rem, 3.6vw, 1.35rem);
     }
 }
 
