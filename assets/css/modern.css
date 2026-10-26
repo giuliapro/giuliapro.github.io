@@ -2429,3 +2429,272 @@ img[src*="/char-"]:not(.profile-picture) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+/* #region Project pages: live site preview */
+
+/* desktop recording of the homepage, framed as a browser window */
+.site-preview {
+    width: 100%;
+    overflow: hidden;
+    background: var(--surface);
+    border: 2px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--ledge), var(--shadow-md);
+}
+
+.site-preview__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 1rem;
+    background: var(--beige-200);
+    border-bottom: 1px solid var(--line);
+}
+
+.site-preview__bar span {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--brown-200);
+}
+
+.site-preview__bar span:nth-child(1) {
+    background: var(--red-200);
+}
+
+.site-preview__bar span:nth-child(2) {
+    background: var(--orange);
+}
+
+.site-preview__bar span:nth-child(3) {
+    background: var(--lime);
+}
+
+.site-preview__url {
+    flex: 1;
+    max-width: 28rem;
+    margin: 0 auto;
+    padding: 0.2rem 1rem;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--brown-600);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.wrap__details .site-preview__url {
+    max-width: 28rem;
+    line-height: 1.5;
+}
+
+.site-preview__video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+    background: var(--beige-200);
+}
+
+@media screen and (max-width: 568px) {
+    .site-preview__bar span {
+        width: 0.55rem;
+        height: 0.55rem;
+    }
+
+    .site-preview__url {
+        font-size: 0.7rem;
+    }
+}
+
+/* #endregion */
+
+/* #region Project pages: brand identity */
+
+.brand-identity__intro {
+    color: var(--brown-600);
+}
+
+.brand-identity__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.brand-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.4rem;
+    background: var(--surface);
+    border: 2px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--ledge), var(--shadow-sm);
+}
+
+.brand-card--wide {
+    grid-column: 1 / -1;
+}
+
+.wrap__details .brand-card__label {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brown-600);
+}
+
+/* palette: one chunky tile per colour */
+.brand-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.brand-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.brand-swatch__chip {
+    aspect-ratio: 4 / 3;
+    margin-bottom: 0.45rem;
+    border-radius: 18px;
+    background: var(--swatch);
+    border: 1px solid rgba(73, 73, 41, 0.12);
+    box-shadow: 0 4px 0 rgba(73, 73, 41, 0.14);
+    transition: transform 0.35s var(--ease-spring);
+}
+
+.brand-swatch:hover .brand-swatch__chip {
+    transform: translateY(-4px) rotate(-2deg);
+}
+
+.wrap__details .brand-swatch__name {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--dark);
+}
+
+.brand-swatch__hex {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--brown-600);
+}
+
+/* typography: specimen when the face is loadable, otherwise just its name */
+.brand-fonts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.brand-font {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px dashed var(--line);
+}
+
+.brand-font:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.brand-font__specimen {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 18px;
+    background: var(--beige-200);
+    box-shadow: 0 3px 0 var(--brown-200);
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--dark);
+}
+
+.brand-font__specimen--none {
+    font-size: 1.3rem;
+    color: var(--brown-600);
+}
+
+.brand-font__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+}
+
+.wrap__details .brand-font__name {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--dark);
+}
+
+.wrap__details .brand-font__role {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--brown-600);
+}
+
+/* visual language keywords */
+.brand-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.brand-keywords li {
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    background: var(--beige-200);
+    box-shadow: 0 2px 0 rgba(135, 90, 35, 0.18);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.brand-keywords li:nth-child(4n+1) {
+    background: #FFF1B8;
+}
+
+.brand-keywords li:nth-child(4n+2) {
+    background: #FFD9DF;
+}
+
+.brand-keywords li:nth-child(4n+3) {
+    background: #DDF2E0;
+}
+
+.brand-keywords li:nth-child(4n+4) {
+    background: #D5EFEE;
+}
+
+@media screen and (max-width: 768px) {
+    .brand-identity__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .brand-palette {
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    }
+}
+
+/* #endregion */
