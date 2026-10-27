@@ -332,17 +332,68 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // drawing zoom
-    const drawingButtons = document.querySelectorAll('.drawing');
+    // drawings lightbox: opens over the page without moving the scroll position
+    const lightbox = document.getElementById('lightbox');
+    const drawingButtons = Array.from(document.querySelectorAll('.drawing'));
 
-    drawingButtons?.forEach(button => {
-        button.addEventListener('click', function () {
-            const imgElement = this.querySelector('img');
-            const imgSrc = imgElement.getAttribute('src');
-            const modalImg = document.getElementById('zoomedImage');
-            modalImg.setAttribute('src', imgSrc);
+    if (lightbox && drawingButtons.length) {
+        const lbImg = lightbox.querySelector('#zoomedImage');
+        const lbCount = lightbox.querySelector('.lightbox__count');
+        let current = 0;
+        let opener = null;
+
+        const show = index => {
+            current = (index + drawingButtons.length) % drawingButtons.length;
+            const src = drawingButtons[current].querySelector('img').getAttribute('src');
+            lbImg.classList.remove('is-loaded');
+            lbImg.onload = () => lbImg.classList.add('is-loaded');
+            lbImg.setAttribute('src', src);
+            lbImg.setAttribute('alt', 'Drawing ' + (current + 1));
+            lbCount.textContent = (current + 1) + ' / ' + drawingButtons.length;
+            // warm the neighbours so next / previous feel instant
+            [current + 1, current - 1].forEach(n => {
+                new Image().src = drawingButtons[(n + drawingButtons.length) % drawingButtons.length].querySelector('img').getAttribute('src');
+            });
+        };
+
+        const open = index => {
+            opener = drawingButtons[index];
+            show(index);
+            lightbox.hidden = false;
+            requestAnimationFrame(() => lightbox.classList.add('is-open'));
+            document.documentElement.classList.add('lightbox-open');
+            lightbox.querySelector('.lightbox__close').focus({ preventScroll: true });
+        };
+
+        const close = () => {
+            lightbox.classList.remove('is-open');
+            document.documentElement.classList.remove('lightbox-open');
+            setTimeout(() => { lightbox.hidden = true; }, 250);
+            opener?.focus({ preventScroll: true });
+        };
+
+        drawingButtons.forEach((button, i) => button.addEventListener('click', () => open(i)));
+        lightbox.querySelector('.lightbox__close').addEventListener('click', close);
+        lightbox.querySelector('.lightbox__nav--prev').addEventListener('click', () => show(current - 1));
+        lightbox.querySelector('.lightbox__nav--next').addEventListener('click', () => show(current + 1));
+        lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target.classList.contains('lightbox__figure')) close(); });
+        document.addEventListener('keydown', e => {
+            if (lightbox.hidden) return;
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowRight') show(current + 1);
+            if (e.key === 'ArrowLeft') show(current - 1);
         });
-    });
+
+        // swipe on touch screens
+        let startX = null;
+        lightbox.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+        lightbox.addEventListener('touchend', e => {
+            if (startX === null) return;
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+            startX = null;
+        });
+    }
 
     // tooltip
 
