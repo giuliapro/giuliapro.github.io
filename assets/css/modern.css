@@ -3135,3 +3135,66 @@ h1.jumbo__text .hero-role {
 }
 
 /* #endregion */
+
+/* Galleries (no more carousels): every image is visible, one next to the other */
+
+/* landscape shots: two per row, a lone last one spans the full width */
+.grid__project-content.two-col>img:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+/* images shown with their own proportions instead of a square crop */
+.grid__project-content.natural img {
+    aspect-ratio: auto;
+}
+
+/* phone screens */
+.grid__project-content.app-screens {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid__project-content.app-screens img {
+    aspect-ratio: auto;
+    height: auto;
+    border-radius: 18px;
+}
+
+@media screen and (max-width: 992px) {
+    .grid__project-content.app-screens {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid__project-content.app-screens {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* YouTube reels: four in a row, like the Bergamin reels (two per row on tablet and phone) */
+.grid__reels:not(.grid__reels--video) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* the old markup stacks two reels per column: flatten it so each reel is a grid item */
+.grid__reels:not(.grid__reels--video) .wrap-reels-content {
+    display: contents;
+}
+
+.grid__reels:not(.grid__reels--video) .wrap-reels-content iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    flex: none;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius-img);
+    box-shadow: var(--shadow-sm);
+    background: #1b1b1b;
+}
+
+@media screen and (max-width: 992px) {
+    .grid__reels:not(.grid__reels--video) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

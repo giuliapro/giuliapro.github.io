@@ -44,8 +44,6 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- splide -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- my css -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/modern.css" rel="stylesheet" />
@@ -145,21 +143,10 @@
                                     <img class="image__mock-up" src="assets/img/card-rupi.png" alt="mock-up project">
                                 </div>
                                 <div class="wrap">
-                                    <div id="splideProject" class="splide">
-                                        <div class="splide__track">
-                                            <ul class="splide__list">
-                                                <li class="splide__slide">
-                                                    <img src="./assets/img/projects/rupi-1.png" alt="project image">
-                                                </li>
-                                                <li class="splide__slide">
-                                                    <img src="./assets/img/projects/rupi-2.png" alt="project image">
-                                                </li>
-                                                <li class="splide__slide">
-                                                    <img src="./assets/img/projects/rupi-3.png" alt="project image">
-                                                </li>
-
-                                            </ul>
-                                        </div>
+                                    <div class="grid__project-content two-col">
+                                        <img src="./assets/img/projects/rupi-1.png" alt="Project image 1" loading="lazy">
+                                        <img src="./assets/img/projects/rupi-2.png" alt="Project image 2" loading="lazy">
+                                        <img src="./assets/img/projects/rupi-3.png" alt="Project image 3" loading="lazy">
                                     </div>
                                 </div>
                                 <!-- brand identity -->
@@ -352,33 +339,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <!-- splide -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Splide('#splideProject', {
-                type: 'loop',
-                perPage: 2,
-                perMove: 1,
-                gap: '2rem',
-                rewind: true,
-                autoScroll: {
-                    speed: 2,
-                },
-                breakpoints: {
-                    991: {
-                        perPage: 1,
-                    },
-                },
-            }).mount();
-
-            $('#splideProject .splide__slide img').css({
-                'border-radius': '1rem'
-            });
-        });
-    </script>
 
 
 </body>
